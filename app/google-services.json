@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "72188595628",
+    "project_id": "userinterface-ssu",
+    "storage_bucket": "userinterface-ssu.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72188595628:android:92fca9161a01568e4f7e09",
+        "android_client_info": {
+          "package_name": "com.example.userinterface"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtv2Sz2lKl0SpHdi2ZS7CyoqBuN5zRgWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

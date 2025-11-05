@@ -1,0 +1,330 @@
+{
+  "office": [
+    {
+      "name": "basic work",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i3-14100",
+          "cpu_AMD": "AMD Ryzen 5 5600G",
+          "ram": "8",
+          "gpu_NVIDIA": "None",
+          "gpu_AMD": "None",
+          "storage": "0"
+        },
+        "recommended": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i5-14400",
+          "cpu_AMD": "AMD Ryzen 5 7600",
+          "ram": "16",
+          "gpu_NVIDIA": "None",
+          "gpu_AMD": "None",
+          "storage": "0"
+        }
+      }
+    }
+  ],
+  "game": [
+    {
+      "name": "League of Legends",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i3-530",
+          "cpu_AMD": "AMD A6-3650",
+          "ram": "2",
+          "gpu_NVIDIA": "NVIDIA GeForce 9600 GT",
+          "gpu_AMD": "AMD Radeon HD 6570",
+          "storage": "16"
+        },
+        "recommended": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i5-3300",
+          "cpu_AMD": "AMD Ryzen 3 1200",
+          "ram": "4",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 560",
+          "gpu_AMD": "AMD Radeon HD 6950",
+          "storage": "16"
+        }
+      }
+    },
+    {
+      "name": "PUBG: Battlegrounds",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i5-4430",
+          "cpu_AMD": "AMD FX-6300",
+          "ram": "8",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 960",
+          "gpu_AMD": "AMD Radeon R7 370",
+          "storage": "50"
+        },
+        "recommended": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i5-6600K",
+          "cpu_AMD": "AMD Ryzen 5 1600",
+          "ram": "16",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1060 3GB",
+          "gpu_AMD": "AMD Radeon RX 580",
+          "storage": "50"
+        }
+      }
+    },
+    {
+      "name": "Baldur's Gate 3",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i5-4690",
+          "cpu_AMD": "AMD FX-8350",
+          "ram": "8",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 970",
+          "gpu_AMD": "AMD Radeon RX 480",
+          "storage": "150"
+        },
+        "recommended": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i7-8700K",
+          "cpu_AMD": "AMD Ryzen 5 3600",
+          "ram": "16",
+          "gpu_NVIDIA": "NVIDIA GeForce RTX 2060 Super",
+          "gpu_AMD": "AMD Radeon RX 5700 XT",
+          "storage": "150"
+        }
+      }
+    },
+    {
+      "name": "The Witcher 3: Wild Hunt",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i5-2500K",
+          "cpu_AMD": "AMD Phenom II X4 940",
+          "ram": "6",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 660",
+          "gpu_AMD": "AMD Radeon HD 7870",
+          "storage": "40"
+        },
+        "recommended": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i7-3770",
+          "cpu_AMD": "AMD FX-8350",
+          "ram": "8",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 770",
+          "gpu_AMD": "AMD Radeon R9 290",
+          "storage": "40"
+        }
+      }
+    },
+    {
+      "name": "Red Dead Redemption 2",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i5-2500K",
+          "cpu_AMD": "AMD FX-6300",
+          "ram": "8",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 770",
+          "gpu_AMD": "AMD Radeon R9 280",
+          "storage": "150"
+        },
+        "recommended": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i7-4770K",
+          "cpu_AMD": "AMD Ryzen 5 1500X",
+          "ram": "12",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1060 6GB",
+          "gpu_AMD": "AMD Radeon RX 480 4GB",
+          "storage": "150"
+        }
+      }
+    },
+    {
+      "name": "Cyberpunk 2077 (Update 2.0+)",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i7-6700",
+          "cpu_AMD": "AMD Ryzen 5 1600",
+          "ram": "12",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1060 6GB",
+          "gpu_AMD": "AMD Radeon RX 580 8GB",
+          "storage": "70"
+        },
+        "recommended": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i7-12700",
+          "cpu_AMD": "AMD Ryzen 7 7800X3D",
+          "ram": "16",
+          "gpu_NVIDIA": "NVIDIA GeForce RTX 2060 Super",
+          "gpu_AMD": "AMD Radeon RX 5700 XT",
+          "storage": "70"
+        }
+      }
+    },
+    {
+      "name": "Death Stranding",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i5-3470",
+          "cpu_AMD": "AMD Ryzen 3 1200",
+          "ram": "8",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1050",
+          "gpu_AMD": "AMD Radeon RX 560",
+          "storage": "80"
+        },
+        "recommended": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i7-3770",
+          "cpu_AMD": "AMD Ryzen 5 1600",
+          "ram": "8",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1060 6GB",
+          "gpu_AMD": "AMD Radeon RX 590",
+          "storage": "80"
+        }
+      }
+    },
+    {
+      "name": "Elden Ring",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i5-8400",
+          "cpu_AMD": "AMD Ryzen 3 3300X",
+          "ram": "12",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1060 3GB",
+          "gpu_AMD": "AMD Radeon RX 580 4GB",
+          "storage": "60"
+        },
+        "recommended": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i7-8700K",
+          "cpu_AMD": "AMD Ryzen 5 3600X",
+          "ram": "16",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1070",
+          "gpu_AMD": "AMD Radeon RX Vega 56",
+          "storage": "60"
+        }
+      }
+    }
+  ],
+  "software": [
+    {
+      "name": "Adobe Premiere Pro",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i5-6500",
+          "cpu_AMD": "AMD Ryzen 5 1600",
+          "ram": "8",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1050",
+          "gpu_AMD": "AMD Radeon RX 560",
+          "storage": "8"
+        },
+        "recommended": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i7-7700K",
+          "cpu_AMD": "AMD Ryzen 7 3700X",
+          "ram": "32",
+          "gpu_NVIDIA": "NVIDIA GeForce RTX 3060",
+          "gpu_AMD": "AMD Radeon RX 6600 XT",
+          "storage": "8"
+        }
+      }
+    },
+    {
+      "name": "DaVinci Resolve",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i7-7700K",
+          "cpu_AMD": "AMD Ryzen 7 1700X",
+          "ram": "16",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1050",
+          "gpu_AMD": "AMD Radeon RX 560",
+          "storage": "0"
+        },
+        "recommended": {
+          "os": "Windows 11",
+          "cpu_Intel": "Intel Core i9-10900K",
+          "cpu_AMD": "AMD Ryzen 9 5900X",
+          "ram": "32",
+          "gpu_NVIDIA": "NVIDIA GeForce RTX 3070",
+          "gpu_AMD": "AMD Radeon RX 6600 XT",
+          "storage": "0"
+        }
+      }
+    },
+    {
+      "name": "Adobe Photoshop",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i3-8100",
+          "cpu_AMD": "AMD Ryzen 3 1200",
+          "ram": "8",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1050",
+          "gpu_AMD": "AMD Radeon RX 550 2GB",
+          "storage": "20"
+        },
+        "recommended": {
+          "os_Win": "Windows 11",
+          "cpu_Intel": "Intel Core i5-12400",
+          "cpu_AMD": "AMD Ryzen 5 5600X",
+          "ram": "16",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1650 Super",
+          "gpu_AMD": "AMD Radeon RX 580 4GB",
+          "storage": "20"
+        }
+      }
+    },
+    {
+      "name": "Adobe Illustrator",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i3-12100",
+          "cpu_AMD": "AMD Ryzen 5 5500",
+          "ram": "8",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1050",
+          "gpu_AMD": "AMD Radeon RX 550 2GB",
+          "storage": "4"
+        },
+        "recommended": {
+          "os": "Windows 11",
+          "cpu_Intel": "Intel Core i3-14100",
+          "cpu_AMD": "AMD Ryzen 5 7600",
+          "ram": "16",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1650 Super",
+          "gpu_AMD": "AMD Radeon RX 580",
+          "storage": "4"
+        }
+      }
+    },
+    {
+      "name": "Adobe After Effects",
+      "specs": {
+        "minimum": {
+          "os": "Windows 10 64-bit",
+          "cpu_Intel": "Intel Core i3-12100",
+          "cpu_AMD": "AMD Ryzen 5 5500",
+          "ram": "16",
+          "gpu_NVIDIA": "NVIDIA GeForce GTX 1050",
+          "gpu_AMD": "AMD Radeon RX 550 2GB",
+          "storage": "15"
+        },
+        "recommended": {
+          "os": "Windows 11",
+          "cpu_Intel": "Intel Core i5-14600K",
+          "cpu_AMD": "AMD Ryzen 7 7700X",
+          "ram": "32",
+          "gpu_NVIDIA": "NVIDIA GeForce RTX 4060 Ti",
+          "gpu_AMD": "AMD Radeon RX 7800 XT",
+          "storage": "15"
+        }
+      }
+    }
+  ]
+}
