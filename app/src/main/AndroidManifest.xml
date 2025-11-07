@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UserInterface">
         <activity
+            android:name=".FindPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
