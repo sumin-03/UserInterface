@@ -35,12 +35,13 @@
             android:text="아이디" />
 
         <EditText
-            android:id="@+id/editID"
+            android:id="@+id/login_email"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
             android:hint="email"
             android:inputType="textEmailAddress" />
+
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -48,7 +49,7 @@
             android:text="비밀번호" />
 
         <EditText
-            android:id="@+id/editPassword"
+            android:id="@+id/login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="password"
@@ -58,7 +59,7 @@
             android:id="@+id/failed_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="아이디 또는 비밀번호를 잘못 입력하셨습니다."
+            android:text="@string/wrong_id_or_password"
             android:textSize="15sp"
             android:textColor="#E23636"
             android:visibility="invisible" />
