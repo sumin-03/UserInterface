@@ -1,0 +1,124 @@
+{
+  "cpuCmp": [
+    {
+      "name": "Intel Core i3-530",
+      "grade": "단종",
+      "bench": "45.6"
+    },
+    {
+      "name": "AMD A6-3650",
+      "grade": "단종",
+      "bench": "44.3"
+    },
+    {
+      "name": "Intel Core i5-3300",
+      "grade": "단종",
+      "bench": "60"
+    },
+    {
+      "name": "AMD Ryzen 3 1200",
+      "grade": "9",
+      "bench": "57"
+    },
+    {
+      "name": "Intel Core i5-4430",
+      "grade": "8",
+      "bench": "65.2"
+    },
+    {
+      "name": "AMD FX-6300",
+      "grade": "단종",
+      "bench": "55.2"
+    },
+    {
+      "name": "Intel Core i5-6600K",
+      "grade": "7",
+      "bench": "72.4"
+    },
+    {
+      "name": "AMD Ryzen 5 1600",
+      "grade": "7",
+      "bench": "70.2"
+    },
+    {
+      "name": "Intel Core i5-4690",
+      "grade": "8",
+      "bench": "67.1"
+    },
+    {
+      "name": "AMD FX-8350",
+      "grade": "단종",
+      "bench": "60.8"
+    },
+    {
+      "name": "Intel Core i7-8700K",
+      "grade": "5",
+      "bench": "88.4"
+    },
+    {
+      "name": "AMD Ryzen 5 3600",
+      "grade": "6",
+      "bench": "83.1"
+    },
+    {
+      "name": "Intel Core i5-2500K",
+      "grade": "9",
+      "bench": "65.9"
+    },
+    {
+      "name": "AMD Phenom II X4 940",
+      "grade": "단종",
+      "bench": "49"
+    },
+    {
+      "name": "Intel Core i7-3770",
+      "grade": "8",
+      "bench": "69"
+    },
+    {
+      "name": "Intel Core i7-4770K",
+      "grade": "8",
+      "bench": "73.6"
+    },
+    {
+      "name": "AMD Ryzen 5 1500X",
+      "grade": "8",
+      "bench": "66.4"
+    },
+    {
+      "name": "Intel Core i7-6700",
+      "grade": "7",
+      "bench": "72.3"
+    },
+    {
+      "name": "Intel Core i5-3470",
+      "grade": "단종",
+      "bench": "63.1"
+    },
+    {
+      "name": "Intel Core i5-8400",
+      "grade": "6",
+      "bench": "81.8"
+    },
+    {
+      "name": "AMD Ryzen 3 3300X",
+      "grade": "6",
+      "bench": "79.7"
+    },
+    {
+      "name": "AMD Ryzen 5 3600X",
+      "grade": "6",
+      "bench": "84.1"
+    },
+    {
+      "name": "Ryzen 7 7800X3D",
+      "grade": "0",
+      "bench": "118"
+    },
+    {
+      "name": "Core i7-12700",
+      "grade": "2",
+      "bench": "108"
+    }
+  ]
+}
