@@ -1,0 +1,112 @@
+{
+  "case": [
+    {
+      "name": "마이크로닉스 WIZMAX 우드리안 MAX",
+      "boardSize": "ATX, M-ATX, M-ITX",
+      "coolerSize": "160",
+      "gpuSize": "410",
+      "powerSize": "top",
+      "size": "big tower",
+      "atxPower": "TRUE"
+    },
+    {
+      "name": "Antec FLUX PRO MESH",
+      "boardSize": "E-ATX, ATX, M-ATX, M-ITX",
+      "coolerSize": "190",
+      "gpuSize": "455",
+      "powerSize": "180-330",
+      "size": "big tower",
+      "atxPower": "TRUE"
+    },
+    {
+      "name": "Antec C8 MESH",
+      "boardSize": "E-ATX, ATX, M-ATX, M-ITX",
+      "coolerSize": "175",
+      "gpuSize": "440",
+      "powerSize": "210",
+      "size": "big tower",
+      "atxPower": "TRUE"
+    },
+    {
+      "name": "BRAVOTEC GUARDIAN 3100M V2 타이탄 글래스",
+      "boardSize": "E-ATX, ATX, M-ATX, M-ITX",
+      "coolerSize": "180",
+      "gpuSize": "380",
+      "powerSize": "280-380",
+      "size": "big tower",
+      "atxPower": "TRUE"
+    },
+    {
+      "name": "DAVEN AQUA 다이버",
+      "boardSize": "E-ATX, ATX, M-ATX, M-ITX",
+      "coolerSize": "165",
+      "gpuSize": "400",
+      "powerSize": "220",
+      "size": "middle tower",
+      "atxPower": "TRUE"
+    },
+    {
+      "name": "darkFlash DS500 RGB",
+      "boardSize": "ATX, M-ATX, M-ITX",
+      "coolerSize": "165",
+      "gpuSize": "405",
+      "powerSize": "170",
+      "size": "middle tower",
+      "atxPower": "TRUE"
+    },
+    {
+      "name": "잘만 N30 백사십",
+      "boardSize": "ATX, M-ATX, M-ITX",
+      "coolerSize": "180",
+      "gpuSize": "430",
+      "powerSize": "220",
+      "size": "middle tower",
+      "atxPower": "TRUE"
+    },
+    {
+      "name": "마이크로닉스 COOLMAX 스테디",
+      "boardSize": "ATX, M-ATX, M-ITX",
+      "coolerSize": "165",
+      "gpuSize": "355",
+      "powerSize": "bottom",
+      "size": "middle tower",
+      "atxPower": "TRUE"
+    },
+    {
+      "name": "DAVEN AQUA Lite",
+      "boardSize": "M-ATX, M-ITX",
+      "coolerSize": "165",
+      "gpuSize": "280",
+      "powerSize": "140",
+      "size": "mini tower",
+      "atxPower": "FALSE"
+    },
+    {
+      "name": "마이크로닉스 WIZMAX 우드리안 PRO",
+      "boardSize": "M-ATX, M-ITX",
+      "coolerSize": "160",
+      "gpuSize": "410",
+      "powerSize": "top",
+      "size": "mini tower",
+      "atxPower": "TRUE"
+    },
+    {
+      "name": "싸이번 LIMPID SC-M5 PLUS BONITO Edition",
+      "boardSize": "M-ATX, ITX",
+      "coolerSize": "165",
+      "gpuSize": "420",
+      "powerSize": "200",
+      "size": "mini tower",
+      "atxPower": "TRUE"
+    },
+    {
+      "name": "앱코 U20MP 큐빅 미니+ 디스플레이",
+      "boardSize": "M-ATX, M-ITX",
+      "coolerSize": "165",
+      "gpuSize": "350",
+      "powerSize": "180",
+      "size": "mini tower",
+      "atxPower": "TRUE"
+    }
+  ]
+}
