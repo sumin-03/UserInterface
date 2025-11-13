@@ -2,434 +2,488 @@
   "cpu": [
     {
       "name": "Ryzen 9 5900X",
+      "manufacturer": "AMD",
       "soket": "AM4",
       "memVer": "DDR4",
       "memClock": "3200",
-      "pcieVer": "4",
+      "pcie": "4",
       "grade": "3"
     },
     {
       "name": "Ryzen 7 5800X3D",
+      "manufacturer": "AMD",
       "soket": "AM4",
       "memVer": "DDR4",
       "memClock": "3200",
-      "pcieVer": "4",
+      "pcie": "4",
       "grade": "3"
     },
     {
       "name": "Ryzen 7 5700X",
+      "manufacturer": "AMD",
       "soket": "AM4",
       "memVer": "DDR4",
       "memClock": "3200",
-      "pcieVer": "4",
+      "pcie": "4",
       "grade": "4"
     },
     {
       "name": "Ryzen 5 5600X",
+      "manufacturer": "AMD",
       "soket": "AM4",
       "memVer": "DDR4",
       "memClock": "3200",
-      "pcieVer": "4",
+      "pcie": "4",
       "grade": "4"
     },
     {
       "name": "Ryzen 7 7800X3D",
+      "manufacturer": "AMD",
       "soket": "AM5",
       "memVer": "DDR5",
       "memClock": "5200",
-      "pcieVer": "5",
+      "pcie": "5",
       "grade": "0"
     },
     {
       "name": "Ryzen 7 7700X",
+      "manufacturer": "AMD",
       "soket": "AM5",
       "memVer": "DDR5",
       "memClock": "5200",
-      "pcieVer": "5",
+      "pcie": "5",
       "grade": "1"
     },
     {
       "name": "Ryzen 5 7600X",
+      "manufacturer": "AMD",
       "soket": "AM5",
       "memVer": "DDR5",
       "memClock": "5200",
-      "pcieVer": "5",
+      "pcie": "5",
       "grade": "2"
     },
     {
       "name": "Ryzen 5 7500F",
+      "manufacturer": "AMD",
       "soket": "AM5",
       "memVer": "DDR5",
       "memClock": "5200",
-      "pcieVer": "5",
+      "pcie": "5",
       "grade": "2"
     },
     {
       "name": "Ryzen 7 9900X3D",
+      "manufacturer": "AMD",
       "soket": "AM5",
       "memVer": "DDR5",
       "memClock": "5600",
-      "pcieVer": "5",
+      "pcie": "5",
       "grade": "0"
     },
     {
       "name": "Ryzen 7 9800X3D",
+      "manufacturer": "AMD",
       "soket": "AM5",
       "memVer": "DDR5",
       "memClock": "5600",
-      "pcieVer": "5",
+      "pcie": "5",
       "grade": "0"
     },
     {
       "name": "Ryzen 7 9700X",
+      "manufacturer": "AMD",
       "soket": "AM5",
       "memVer": "DDR5",
       "memClock": "5600",
-      "pcieVer": "5",
+      "pcie": "5",
       "grade": "1"
     },
     {
       "name": "Ryzen 5 9600X",
+      "manufacturer": "AMD",
       "soket": "AM5",
       "memVer": "DDR5",
       "memClock": "5600",
-      "pcieVer": "5",
+      "pcie": "5",
       "grade": "1"
     },
     {
       "name": "Ryzen 5 9500F",
+      "manufacturer": "AMD",
       "soket": "AM5",
       "memVer": "DDR5",
       "memClock": "5600",
-      "pcieVer": "5",
+      "pcie": "5",
       "grade": "2"
     },
     {
       "name": "Core i3-1115G4",
+      "manufacturer": "Intel",
       "soket": "BGA 1598",
       "memVer": "DDR4",
       "memClock": "3200",
-      "pcieVer": "4",
+      "pcie": "4",
       "grade": "5"
     },
     {
       "name": "Core i5-11600",
+      "manufacturer": "Intel",
       "soket": "1200",
       "memVer": "DDR4",
       "memClock": "3200",
-      "pcieVer": "4",
+      "pcie": "4",
       "grade": "4"
     },
     {
       "name": "Core i7-11700",
+      "manufacturer": "Intel",
       "soket": "1200",
       "memVer": "DDR4",
       "memClock": "3200",
-      "pcieVer": "4",
+      "pcie": "4",
       "grade": "4"
     },
     {
       "name": "Core i9-11900",
+      "manufacturer": "Intel",
       "soket": "1200",
       "memVer": "DDR4",
       "memClock": "3200",
-      "pcieVer": "4",
+      "pcie": "4",
       "grade": "3"
     },
     {
       "name": "Core i3-12100",
+      "manufacturer": "Intel",
       "soket": "1700",
       "memVer": "DDR4, DDR5",
       "memClock": "3200, 4800",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "5"
     },
     {
       "name": "Core i5-12600",
+      "manufacturer": "Intel",
       "soket": "1700",
       "memVer": "DDR4, DDR5",
       "memClock": "3200, 4800",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "3"
     },
     {
       "name": "Core i7-12700",
+      "manufacturer": "Intel",
       "soket": "1700",
       "memVer": "DDR4, DDR5",
       "memClock": "3200, 4800",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "2"
     },
     {
       "name": "Core i9-12900",
+      "manufacturer": "Intel",
       "soket": "1700",
       "memVer": "DDR4, DDR5",
       "memClock": "3200, 4800",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "2"
     },
     {
       "name": "Core i3-13100",
+      "manufacturer": "Intel",
       "soket": "1700",
       "memVer": "DDR4, DDR5",
       "memClock": "3200, 4800",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "5"
     },
     {
       "name": "Core i5-13600",
+      "manufacturer": "Intel",
       "soket": "1700",
       "memVer": "DDR4, DDR5",
       "memClock": "3200, 4800",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "2"
     },
     {
       "name": "Core i7-13700",
+      "manufacturer": "Intel",
       "soket": "1700",
       "memVer": "DDR4, DDR5",
       "memClock": "3200, 5600",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "1"
     },
     {
       "name": "Core i9-13900",
+      "manufacturer": "Intel",
       "soket": "1700",
       "memVer": "DDR4, DDR5",
       "memClock": "3200, 5600",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "0"
     },
     {
       "name": "Core i3-14100",
+      "manufacturer": "Intel",
       "soket": "1700",
       "memVer": "DDR4, DDR5",
       "memClock": "3200, 4800",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "4"
     },
     {
       "name": "Core i5-14600",
+      "manufacturer": "Intel",
       "soket": "1700",
       "memVer": "DDR4, DDR5",
       "memClock": "3200, 5600",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "1"
     },
     {
       "name": "Core i7-14700",
+      "manufacturer": "Intel",
       "soket": "1700",
       "memVer": "DDR4, DDR5",
       "memClock": "3200, 5600",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "0"
     },
     {
       "name": "Core i9-14900",
+      "manufacturer": "Intel",
       "soket": "1700",
       "memVer": "DDR4, DDR5",
       "memClock": "3200, 5600",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "0"
     },
     {
       "name": "Core Ultra 5 245",
+      "manufacturer": "Intel",
       "soket": "1851",
       "memVer": "DDR5",
       "memClock": "6400",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "1"
     },
     {
       "name": "Core Ultra 7 265",
+      "manufacturer": "Intel",
       "soket": "1851",
       "memVer": "DDR5",
       "memClock": "6400",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "1"
     },
     {
       "name": "Core Ultra 9 285",
+      "manufacturer": "Intel",
       "soket": "1851",
       "memVer": "DDR5",
       "memClock": "6400",
-      "pcieVer": "4, 5",
+      "pcie": "4, 5",
       "grade": "0"
     },
     {
       "name": "Intel Core i3-530",
+      "manufacturer": "Intel",
       "soket": "1366",
       "memVer": "DDR3",
       "memClock": "FALSE",
-      "pcieVer": "FALSE",
+      "pcie": "FALSE",
       "grade": "단종"
     },
     {
       "name": "AMD A6-3650",
+      "manufacturer": "AMD",
       "soket": "FM1",
       "memVer": "DDR3",
       "memClock": "FALSE",
-      "pcieVer": "FALSE",
+      "pcie": "FALSE",
       "grade": "단종"
     },
     {
       "name": "Intel Core i5-3300",
+      "manufacturer": "Intel",
       "soket": "1155",
       "memVer": "DDR3",
       "memClock": "FALSE",
-      "pcieVer": "FALSE",
+      "pcie": "FALSE",
       "grade": "단종"
     },
     {
       "name": "AMD Ryzen 3 1200",
+      "manufacturer": "AMD",
       "soket": "AM4",
       "memVer": "DDR4",
       "memClock": "2667",
-      "pcieVer": "3",
+      "pcie": "3",
       "grade": "9"
     },
     {
       "name": "Intel Core i5-4430",
+      "manufacturer": "Intel",
       "soket": "1150",
       "memVer": "DDR3",
       "memClock": "",
-      "pcieVer": "",
+      "pcie": "",
       "grade": "8"
     },
     {
       "name": "AMD FX-6300",
+      "manufacturer": "AMD",
       "soket": "AM3+",
       "memVer": "DDR3",
       "memClock": "FALSE",
-      "pcieVer": "FALSE",
+      "pcie": "FALSE",
       "grade": "단종"
     },
     {
       "name": "Intel Core i5-6600K",
+      "manufacturer": "Intel",
       "soket": "1151",
       "memVer": "DDR3, DDR4",
       "memClock": "2133",
-      "pcieVer": "3",
+      "pcie": "3",
       "grade": "7"
     },
     {
       "name": "AMD Ryzen 5 1600",
+      "manufacturer": "AMD",
       "soket": "AM4",
       "memVer": "DDR4",
       "memClock": "2667",
-      "pcieVer": "3",
+      "pcie": "3",
       "grade": "7"
     },
     {
       "name": "Intel Core i5-4690",
+      "manufacturer": "Intel",
       "soket": "1150",
       "memVer": "DDR3",
       "memClock": "",
-      "pcieVer": "",
+      "pcie": "",
       "grade": "8"
     },
     {
       "name": "AMD FX-8350",
+      "manufacturer": "AMD",
       "soket": "AM3+",
       "memVer": "DDR3",
       "memClock": "FALSE",
-      "pcieVer": "FALSE",
+      "pcie": "FALSE",
       "grade": "단종"
     },
     {
       "name": "Intel Core i7-8700K",
+      "manufacturer": "Intel",
       "soket": "1151v2",
       "memVer": "DDR4",
       "memClock": "2666",
-      "pcieVer": "3",
+      "pcie": "3",
       "grade": "5"
     },
     {
       "name": "AMD Ryzen 5 3600",
+      "manufacturer": "AMD",
       "soket": "AM4",
       "memVer": "DDR4",
       "memClock": "3200",
-      "pcieVer": "4",
+      "pcie": "4",
       "grade": "6"
     },
     {
       "name": "Intel Core i5-2500K",
+      "manufacturer": "Intel",
       "soket": "1155",
       "memVer": "DDR3",
       "memClock": "0",
-      "pcieVer": "0",
+      "pcie": "0",
       "grade": "9"
     },
     {
       "name": "AMD Phenom II X4 940",
+      "manufacturer": "AMD",
       "soket": "AM2+",
       "memVer": "DDR2",
       "memClock": "FALSE",
-      "pcieVer": "FALSE",
+      "pcie": "FALSE",
       "grade": "단종"
     },
     {
       "name": "Intel Core i7-3770",
+      "manufacturer": "Intel",
       "soket": "1155",
       "memVer": "DDR3",
       "memClock": "0",
-      "pcieVer": "0",
+      "pcie": "0",
       "grade": "8"
     },
     {
       "name": "Intel Core i7-4770K",
+      "manufacturer": "Intel",
       "soket": "1150",
       "memVer": "DDR3",
       "memClock": "0",
-      "pcieVer": "0",
+      "pcie": "0",
       "grade": "8"
     },
     {
       "name": "AMD Ryzen 5 1500X",
+      "manufacturer": "AMD",
       "soket": "AM4",
       "memVer": "DDR4",
       "memClock": "2667",
-      "pcieVer": "3",
+      "pcie": "3",
       "grade": "8"
     },
     {
       "name": "Intel Core i7-6700",
+      "manufacturer": "Intel",
       "soket": "1151",
       "memVer": "DDR3, DDR4",
       "memClock": "2133",
-      "pcieVer": "3",
+      "pcie": "3",
       "grade": "7"
     },
     {
       "name": "Intel Core i5-3470",
+      "manufacturer": "Intel",
       "soket": "1155",
       "memVer": "DDR3",
       "memClock": "FALSE",
-      "pcieVer": "FALSE",
+      "pcie": "FALSE",
       "grade": "단종"
     },
     {
       "name": "Intel Core i5-8400",
+      "manufacturer": "Intel",
       "soket": "1151v2",
       "memVer": "DDR4",
       "memClock": "2666",
-      "pcieVer": "3",
+      "pcie": "3",
       "grade": "6"
     },
     {
       "name": "AMD Ryzen 3 3300X",
+      "manufacturer": "AMD",
       "soket": "AM4",
       "memVer": "DDR4",
       "memClock": "3200",
-      "pcieVer": "4",
+      "pcie": "4",
       "grade": "6"
     },
     {
       "name": "AMD Ryzen 5 3600X",
+      "manufacturer": "AMD",
       "soket": "AM4",
       "memVer": "DDR4",
       "memClock": "3200",
-      "pcieVer": "4",
+      "pcie": "4",
       "grade": "6"
     }
   ]
