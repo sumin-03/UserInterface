@@ -1,0 +1,52 @@
+{
+  "ram": [
+    {
+      "name": "SK하이닉스 DDR5-5600 32GB",
+      "manufacturer": "SK 하이닉스",
+      "ddr": "5",
+      "size": "32",
+      "clock": "5600",
+      "heatsink": "0"
+    },
+    {
+      "name": "SK하이닉스 DDR5-5600 16GB",
+      "manufacturer": "SK 하이닉스",
+      "ddr": "5",
+      "size": "16",
+      "clock": "5600",
+      "heatsink": "0"
+    },
+    {
+      "name": "SK하이닉스 DDR5-5600 8GB",
+      "manufacturer": "SK 하이닉스",
+      "ddr": "5",
+      "size": "8",
+      "clock": "5600",
+      "heatsink": "0"
+    },
+    {
+      "name": "삼성전자 DDR4-3200 32GB",
+      "manufacturer": "삼성전자",
+      "ddr": "4",
+      "size": "32",
+      "clock": "3200",
+      "heatsink": "0"
+    },
+    {
+      "name": "삼성전자 DDR4-3200 16GB",
+      "manufacturer": "삼성전자",
+      "ddr": "4",
+      "size": "16",
+      "clock": "3200",
+      "heatsink": "0"
+    },
+    {
+      "name": "삼성전자 DDR4-3200 8GB",
+      "manufacturer": "삼성전자",
+      "ddr": "4",
+      "size": "8",
+      "clock": "3200",
+      "heatsink": "0"
+    }
+  ]
+}
