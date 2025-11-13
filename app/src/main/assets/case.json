@@ -2,6 +2,7 @@
   "case": [
     {
       "name": "마이크로닉스 WIZMAX 우드리안 MAX",
+      "manufacturer": "마이크로닉스",
       "boardSize": "ATX, M-ATX, M-ITX",
       "coolerSize": "160",
       "gpuSize": "410",
@@ -11,6 +12,7 @@
     },
     {
       "name": "Antec FLUX PRO MESH",
+      "manufacturer": "Antec",
       "boardSize": "E-ATX, ATX, M-ATX, M-ITX",
       "coolerSize": "190",
       "gpuSize": "455",
@@ -20,6 +22,7 @@
     },
     {
       "name": "Antec C8 MESH",
+      "manufacturer": "Antec",
       "boardSize": "E-ATX, ATX, M-ATX, M-ITX",
       "coolerSize": "175",
       "gpuSize": "440",
@@ -29,6 +32,7 @@
     },
     {
       "name": "BRAVOTEC GUARDIAN 3100M V2 타이탄 글래스",
+      "manufacturer": "BRAVOTEC",
       "boardSize": "E-ATX, ATX, M-ATX, M-ITX",
       "coolerSize": "180",
       "gpuSize": "380",
@@ -38,6 +42,7 @@
     },
     {
       "name": "DAVEN AQUA 다이버",
+      "manufacturer": "DAVEN",
       "boardSize": "E-ATX, ATX, M-ATX, M-ITX",
       "coolerSize": "165",
       "gpuSize": "400",
@@ -47,6 +52,7 @@
     },
     {
       "name": "darkFlash DS500 RGB",
+      "manufacturer": "darkFlash",
       "boardSize": "ATX, M-ATX, M-ITX",
       "coolerSize": "165",
       "gpuSize": "405",
@@ -56,6 +62,7 @@
     },
     {
       "name": "잘만 N30 백사십",
+      "manufacturer": "잘만",
       "boardSize": "ATX, M-ATX, M-ITX",
       "coolerSize": "180",
       "gpuSize": "430",
@@ -65,6 +72,7 @@
     },
     {
       "name": "마이크로닉스 COOLMAX 스테디",
+      "manufacturer": "마이크로닉스",
       "boardSize": "ATX, M-ATX, M-ITX",
       "coolerSize": "165",
       "gpuSize": "355",
@@ -74,6 +82,7 @@
     },
     {
       "name": "DAVEN AQUA Lite",
+      "manufacturer": "DAVEN",
       "boardSize": "M-ATX, M-ITX",
       "coolerSize": "165",
       "gpuSize": "280",
@@ -83,6 +92,7 @@
     },
     {
       "name": "마이크로닉스 WIZMAX 우드리안 PRO",
+      "manufacturer": "마이크로닉스",
       "boardSize": "M-ATX, M-ITX",
       "coolerSize": "160",
       "gpuSize": "410",
@@ -92,6 +102,7 @@
     },
     {
       "name": "싸이번 LIMPID SC-M5 PLUS BONITO Edition",
+      "manufacturer": "싸이번",
       "boardSize": "M-ATX, ITX",
       "coolerSize": "165",
       "gpuSize": "420",
@@ -101,6 +112,7 @@
     },
     {
       "name": "앱코 U20MP 큐빅 미니+ 디스플레이",
+      "manufacturer": "앱코",
       "boardSize": "M-ATX, M-ITX",
       "coolerSize": "165",
       "gpuSize": "350",
