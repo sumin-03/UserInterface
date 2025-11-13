@@ -1,0 +1,104 @@
+{
+  "gpuCmp": [
+    {
+      "name": "GeForce 9600 GT",
+      "grade": "13",
+      "bench": "1.74"
+    },
+    {
+      "name": "Radeon HD 6570",
+      "grade": "13",
+      "bench": "1.96"
+    },
+    {
+      "name": "GeForce GTX 560",
+      "grade": "12",
+      "bench": "5.77"
+    },
+    {
+      "name": "Radeon HD 6950",
+      "grade": "12",
+      "bench": "7.95"
+    },
+    {
+      "name": "GeForce GTX 960",
+      "grade": "11",
+      "bench": "13.8"
+    },
+    {
+      "name": "Radeon R7 370",
+      "grade": "12",
+      "bench": "9.1"
+    },
+    {
+      "name": "GeForce GTX 970",
+      "grade": "10",
+      "bench": "20.6"
+    },
+    {
+      "name": "GeForce GTX 660",
+      "grade": "12",
+      "bench": "8.32"
+    },
+    {
+      "name": "Radeon HD 7870",
+      "grade": "11",
+      "bench": "11.1"
+    },
+    {
+      "name": "GeForce GTX 770",
+      "grade": "11",
+      "bench": "14.4"
+    },
+    {
+      "name": "Radeon R9 290",
+      "grade": "10",
+      "bench": "19.4"
+    },
+    {
+      "name": "Radeon R9 280",
+      "grade": "11",
+      "bench": "12.8"
+    },
+    {
+      "name": "GeForce GTX 1060",
+      "grade": "9",
+      "bench": "23"
+    },
+    {
+      "name": "Radeon RX 580",
+      "grade": "10",
+      "bench": "21.5"
+    },
+    {
+      "name": "Radeon RX 480",
+      "grade": "10",
+      "bench": "19.1"
+    },
+    {
+      "name": "GeForce RTX 2060 SUPER",
+      "grade": "7",
+      "bench": "41.4"
+    },
+    {
+      "name": "Radeon RX 5700 XT",
+      "grade": "7",
+      "bench": "41.6"
+    },
+    {
+      "name": "GeForce GTX 1050",
+      "grade": "11",
+      "bench": "10.7"
+    },
+    {
+      "name": "Radeon RX 560",
+      "grade": "12",
+      "bench": "9.19"
+    },
+    {
+      "name": "Radeon RX 590",
+      "grade": "10",
+      "bench": "23.7"
+    }
+  ]
+}
