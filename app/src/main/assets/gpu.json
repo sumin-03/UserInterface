@@ -561,34 +561,6 @@
       "grade": "1"
     },
     {
-      "name": "GeForce 9600 GT",
-      "manufacturer": "AMD",
-      "power": "500",
-      "pcie": "0",
-      "grade": "13"
-    },
-    {
-      "name": "Radeon HD 6570",
-      "manufacturer": "AMD",
-      "power": "500",
-      "pcie": "0",
-      "grade": "13"
-    },
-    {
-      "name": "GeForce GTX 560",
-      "manufacturer": "NVIDIA",
-      "power": "500",
-      "pcie": "2",
-      "grade": "12"
-    },
-    {
-      "name": "Radeon HD 6950",
-      "manufacturer": "AMD",
-      "power": "500",
-      "pcie": "0",
-      "grade": "12"
-    },
-    {
       "name": "GeForce GTX 960",
       "manufacturer": "NVIDIA",
       "power": "500",
