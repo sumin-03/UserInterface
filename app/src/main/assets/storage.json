@@ -30,6 +30,7 @@
   "hdd": [
     {
       "name": "Seagate BarraCuda 5400/256M 8TB",
+      "manufacturer": "Seagate",
       "size": "8",
       "inch": "3.5",
       "interface": "SATA3",
@@ -41,6 +42,7 @@
     },
     {
       "name": "Seagate BarraCuda 5400/256M 6TB",
+      "manufacturer": "Seagate",
       "size": "6",
       "inch": "3.5",
       "interface": "SATA3",
@@ -52,6 +54,7 @@
     },
     {
       "name": "Seagate BarraCuda 5400/256M 4TB",
+      "manufacturer": "Seagate",
       "size": "4",
       "inch": "3.5",
       "interface": "SATA3",
@@ -63,6 +66,7 @@
     },
     {
       "name": "Seagate BarraCuda 5400/256M 3TB",
+      "manufacturer": "Seagate",
       "size": "3",
       "inch": "3.5",
       "interface": "SATA3",

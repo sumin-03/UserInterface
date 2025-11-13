@@ -26,29 +26,6 @@
   ],
   "game": [
     {
-      "name": "League of Legends",
-      "specs": {
-        "minimum": {
-          "os": "Windows 10 64-bit",
-          "cpu_Intel": "Intel Core i3-530",
-          "cpu_AMD": "AMD A6-3650",
-          "ram": "2",
-          "gpu_NVIDIA": "NVIDIA GeForce 9600 GT",
-          "gpu_AMD": "AMD Radeon HD 6570",
-          "storage": "16"
-        },
-        "recommended": {
-          "os": "Windows 10 64-bit",
-          "cpu_Intel": "Intel Core i5-3300",
-          "cpu_AMD": "AMD Ryzen 3 1200",
-          "ram": "4",
-          "gpu_NVIDIA": "NVIDIA GeForce GTX 560",
-          "gpu_AMD": "AMD Radeon HD 6950",
-          "storage": "16"
-        }
-      }
-    },
-    {
       "name": "PUBG: Battlegrounds",
       "specs": {
         "minimum": {
