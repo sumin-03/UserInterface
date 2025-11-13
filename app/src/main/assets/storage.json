@@ -1,0 +1,76 @@
+{
+  "ssd": [
+    {
+      "name": "SK하이닉스 Platinum P41 M.2 NVMe 1TB",
+      "manufacturer": "SK하이닉스",
+      "formfactor": "M.2",
+      "pcie": "4",
+      "dram": "1",
+      "ddr": "4",
+      "size": "1",
+      "read": "7000",
+      "write": "6500",
+      "read_IOPS": "1400",
+      "write_IOPS": "1300"
+    },
+    {
+      "name": "SK하이닉스 Platinum P41 M.2 NVMe 2TB",
+      "manufacturer": "SK하이닉스",
+      "formfactor": "M.2",
+      "pcie": "4",
+      "dram": "1",
+      "ddr": "4",
+      "size": "2",
+      "read": "7000",
+      "write": "6500",
+      "read_IOPS": "1400",
+      "write_IOPS": "1300"
+    }
+  ],
+  "hdd": [
+    {
+      "name": "Seagate BarraCuda 5400/256M 8TB",
+      "size": "8",
+      "inch": "3.5",
+      "interface": "SATA3",
+      "RPM": "5400",
+      "buffer": "256",
+      "write": "190",
+      "read": "190",
+      "recode": "SMR"
+    },
+    {
+      "name": "Seagate BarraCuda 5400/256M 6TB",
+      "size": "6",
+      "inch": "3.5",
+      "interface": "SATA3",
+      "RPM": "5400",
+      "buffer": "256",
+      "write": "190",
+      "read": "190",
+      "recode": "SMR"
+    },
+    {
+      "name": "Seagate BarraCuda 5400/256M 4TB",
+      "size": "4",
+      "inch": "3.5",
+      "interface": "SATA3",
+      "RPM": "5400",
+      "buffer": "256",
+      "write": "190",
+      "read": "190",
+      "recode": "SMR"
+    },
+    {
+      "name": "Seagate BarraCuda 5400/256M 3TB",
+      "size": "3",
+      "inch": "3.5",
+      "interface": "SATA3",
+      "RPM": "5400",
+      "buffer": "256",
+      "write": "190",
+      "read": "190",
+      "recode": "SMR"
+    }
+  ]
+}
