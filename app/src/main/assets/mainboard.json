@@ -9,7 +9,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "192",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "5",
+      "SATA": "4"
     },
     {
       "name": "MSI MAG X870E 토마호크 WIFI",
@@ -20,7 +22,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE X870E AORUS PRO ICE",
@@ -31,7 +35,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "4"
     },
     {
       "name": "MSI MAG X870 토마호크 WIFI",
@@ -42,7 +48,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE X870 EAGLE WIFI7",
@@ -53,7 +61,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "4"
     },
     {
       "name": "ASUS PRIME X870-P-CSM",
@@ -64,7 +74,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "192",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "4"
     },
     {
       "name": "ASUS TUF Gaming B850-PLUS WIFI STCOM",
@@ -75,7 +87,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "4"
     },
     {
       "name": "ASUS TUF Gaming B850M-PLUS WIFI7 STCOM",
@@ -86,7 +100,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "4"
     },
     {
       "name": "MSI MAG B850M 박격포 WIFI",
@@ -97,7 +113,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE B850M AORUS ELITE WIFI6E ICE",
@@ -108,7 +126,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "2",
+      "SATA": "4"
     },
     {
       "name": "ASUS ROG STRIX B650E-E GAMING WIFI STCOM",
@@ -119,7 +139,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE B650E AORUS STEALTH ICE 피씨디렉트",
@@ -130,7 +152,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "4"
     },
     {
       "name": "MSI MAG B650 토마호크 WIFI",
@@ -141,7 +165,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "192",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "6"
     },
     {
       "name": "MSI MAG B650M 박격포 WIFI",
@@ -152,7 +178,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "2",
+      "SATA": "6"
     },
     {
       "name": "GIGABYTE B650M K",
@@ -163,7 +191,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "192",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "2",
+      "SATA": "4"
     },
     {
       "name": "ASUS PRIME B650M-A II",
@@ -174,7 +204,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "2",
+      "SATA": "4"
     },
     {
       "name": "ASUS TUF Gaming B550M-PLUS STCOM",
@@ -185,7 +217,9 @@
       "size": "M-ATX",
       "memVer": "DDR4",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "2",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE B550M AORUS ELITE",
@@ -196,7 +230,9 @@
       "size": "M-ATX",
       "memVer": "DDR4",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "2",
+      "SATA": "4"
     },
     {
       "name": "MSI MAG Z890 토마호크 WIFI",
@@ -207,7 +243,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "5",
+      "SATA": "8"
     },
     {
       "name": "GIGABYTE Z890 AORUS ELITE WIFI7 ICE",
@@ -218,7 +256,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "5",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE Z890 AORUS ELITE WIFI7",
@@ -229,7 +269,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "5",
+      "SATA": "4"
     },
     {
       "name": "ASUS PRIME Z890M-PLUS WIFI-CSM STCOM",
@@ -240,7 +282,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "192",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "4"
     },
     {
       "name": "MSI MAG B860 토마호크 WIFI",
@@ -251,7 +295,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE B860 AORUS ELITE WIFI7 ICE",
@@ -262,7 +308,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "4"
     },
     {
       "name": "ASUS PRIME B860M-A-CSM",
@@ -273,7 +321,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "192",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "4"
     },
     {
       "name": "MSI MAG B860M 박격포 WIFI",
@@ -284,7 +334,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "4"
     },
     {
       "name": "ASUS PRIME H810M-A",
@@ -295,7 +347,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "128",
-      "memSlot": "2"
+      "memSlot": "2",
+      "M.2": "2",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE H810M S2H",
@@ -306,7 +360,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "128",
-      "memSlot": "2"
+      "memSlot": "2",
+      "M.2": "2",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE Z790 UD",
@@ -317,7 +373,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "6"
     },
     {
       "name": "ASUS TUF Gaming Z790-PLUS WIFI",
@@ -328,7 +386,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "4"
     },
     {
       "name": "ASUS PRIME Z790M-PLUS-CSM",
@@ -339,7 +399,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "4"
     },
     {
       "name": "MSI MAG B760 토마호크 WIFI",
@@ -350,7 +412,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "192",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "4"
     },
     {
       "name": "MSI MAG B760M 박격포 II",
@@ -361,7 +425,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "4"
     },
     {
       "name": "ASUS TUF Gaming B760M-PLUS II",
@@ -372,7 +438,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "192",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE B760M AORUS ELITE GEN5",
@@ -383,7 +451,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "256",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "2",
+      "SATA": "4"
     },
     {
       "name": "MSI MAG Z690 토마호크 WIFI DDR4",
@@ -394,7 +464,9 @@
       "size": "ATX",
       "memVer": "DDR4",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "6"
     },
     {
       "name": "GIGABYTE Z690 AORUS ELITE",
@@ -405,7 +477,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "6"
     },
     {
       "name": "ASUS TUF Gaming Z690-PLUS WIFI",
@@ -416,7 +490,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "4"
     },
     {
       "name": "ASUS ROG STRIX B660-F GAMING WIFI STCOM",
@@ -427,7 +503,9 @@
       "size": "ATX",
       "memVer": "DDR5",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "4",
+      "SATA": "4"
     },
     {
       "name": "ASUS TUF Gaming B660-PLUS WIFI D4 STCOM",
@@ -438,7 +516,9 @@
       "size": "ATX",
       "memVer": "DDR4",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE B660M GAMING X",
@@ -449,7 +529,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "2",
+      "SATA": "4"
     },
     {
       "name": "ASUS TUF Gaming B660M-E D4",
@@ -460,7 +542,9 @@
       "size": "M-ATX",
       "memVer": "DDR4",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "2",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE H610M K V2",
@@ -471,7 +555,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "128",
-      "memSlot": "2"
+      "memSlot": "2",
+      "M.2": "1",
+      "SATA": "2"
     },
     {
       "name": "MSI PRO H610M-C EX",
@@ -482,7 +568,9 @@
       "size": "M-ATX",
       "memVer": "DDR5",
       "memMax": "96",
-      "memSlot": "2"
+      "memSlot": "2",
+      "M.2": "1",
+      "SATA": "4"
     },
     {
       "name": "ASUS PRIME H610M-K D4",
@@ -493,7 +581,9 @@
       "size": "M-ATX",
       "memVer": "DDR4",
       "memMax": "64",
-      "memSlot": "2"
+      "memSlot": "2",
+      "M.2": "1",
+      "SATA": "4"
     },
     {
       "name": "ASUS TUF Gaming Z590-PLUS",
@@ -504,7 +594,9 @@
       "size": "ATX",
       "memVer": "DDR4",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "6"
     },
     {
       "name": "MSI MPG Z590 게이밍 카본 WIFI",
@@ -515,7 +607,9 @@
       "size": "ATX",
       "memVer": "DDR4",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "3",
+      "SATA": "6"
     },
     {
       "name": "ASUS ROG STRIX B560-A GAMING WIFI STCOM",
@@ -526,7 +620,9 @@
       "size": "ATX",
       "memVer": "DDR4",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "2",
+      "SATA": "6"
     },
     {
       "name": "ASUS TUF Gaming B560M-PLUS WIFI",
@@ -537,7 +633,9 @@
       "size": "M-ATX",
       "memVer": "DDR4",
       "memMax": "128",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "2",
+      "SATA": "6"
     },
     {
       "name": "MSI H510M-A PRO",
@@ -548,7 +646,9 @@
       "size": "M-ATX",
       "memVer": "DDR4",
       "memMax": "64",
-      "memSlot": "2"
+      "memSlot": "2",
+      "M.2": "1",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE H510M H",
@@ -559,7 +659,9 @@
       "size": "M-ATX",
       "memVer": "DDR4",
       "memMax": "64",
-      "memSlot": "2"
+      "memSlot": "2",
+      "M.2": "1",
+      "SATA": "4"
     },
     {
       "name": "ASUS PRIME H510M-K",
@@ -570,7 +672,9 @@
       "size": "M-ATX",
       "memVer": "DDR4",
       "memMax": "64",
-      "memSlot": "2"
+      "memSlot": "2",
+      "M.2": "1",
+      "SATA": "4"
     },
     {
       "name": "ASRock B360M PRO4",
@@ -581,7 +685,9 @@
       "size": "M-ATX",
       "memVer": "DDR4",
       "memMax": "64",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "2",
+      "SATA": "6"
     },
     {
       "name": "AFOX IH110D4-MA5-V2",
@@ -592,7 +698,9 @@
       "size": "M-ATX",
       "memVer": "DDR4",
       "memMax": "32",
-      "memSlot": "2"
+      "memSlot": "2",
+      "M.2": "1",
+      "SATA": "4"
     },
     {
       "name": "GIGABYTE GA-B75M-D3H",
@@ -603,7 +711,9 @@
       "size": "M-ATX",
       "memVer": "DDR3",
       "memMax": "32",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "1",
+      "SATA": "6"
     },
     {
       "name": "GIGABYTE GA-B85M-DS3H",
@@ -614,7 +724,9 @@
       "size": "M-ATX",
       "memVer": "DDR3",
       "memMax": "32",
-      "memSlot": "4"
+      "memSlot": "4",
+      "M.2": "0",
+      "SATA": "6"
     }
   ]
 }
