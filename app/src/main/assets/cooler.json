@@ -6,7 +6,7 @@
       "kind": "air",
       "size": "157",
       "cpuGrade": "EL4",
-      "soket": "1851, 1700, 1200, 1155, 1156, 2066, 2011-V3, 2011, AM5, AM4"
+      "socket": "1851, 1700, 1200, 1155, 1156, 2066, 2011-V3, 2011, AM5, AM4"
     },
     {
       "name": "DEEPCOOL AG620",
@@ -14,7 +14,7 @@
       "kind": "air",
       "size": "157",
       "cpuGrade": "EL2",
-      "soket": "1851, 1700, 1200, 1155, 1156, AM5, AM4"
+      "socket": "1851, 1700, 1200, 1155, 1156, AM5, AM4"
     },
     {
       "name": "3RSYS Socoool RC1900",
@@ -22,7 +22,7 @@
       "kind": "air",
       "size": "157",
       "cpuGrade": "EL0",
-      "soket": "1851, 1700, 1200, 1155, 1156, AM5, AM4"
+      "socket": "1851, 1700, 1200, 1155, 1156, AM5, AM4"
     },
     {
       "name": "쿨러마스터 MASTER AIR MA824 STEALTH",
@@ -30,7 +30,7 @@
       "kind": "air",
       "size": "165.6",
       "cpuGrade": "EL0",
-      "soket": "1851, 1700, 1200, 1155, 1156, AM5, AM4"
+      "socket": "1851, 1700, 1200, 1155, 1156, AM5, AM4"
     },
     {
       "name": "NZXT Kraken Core 360 RGB",
@@ -38,7 +38,7 @@
       "kind": "water",
       "size": "401",
       "cpuGrade": "EG1",
-      "soket": "1851, 1700, 1200, 1155, 1156, AM5, AM4"
+      "socket": "1851, 1700, 1200, 1155, 1156, AM5, AM4"
     },
     {
       "name": "CORSAIR NAUTILUS 360 RS ARGB",
@@ -46,7 +46,7 @@
       "kind": "water",
       "size": "360",
       "cpuGrade": "EG1",
-      "soket": "1851, 1700, AM5, AM4"
+      "socket": "1851, 1700, AM5, AM4"
     }
   ]
 }
