@@ -71,19 +71,16 @@ public class LoginActivity extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 if(user != null){
                                     if (user.isEmailVerified()) {
-                                        // ✅ 2-1. 인증 완료
+                                        // 2-1. 인증 완료
                                         Log.d(TAG, "Email is verified.");
-                                        // TODO: 홈 회면 만들고 Toast 삭제
-                                        Toast.makeText(LoginActivity.this, "로그인 성공!", Toast.LENGTH_SHORT).show();
                                         binding.failedLogin.setVisibility(View.INVISIBLE);
 
-                                        // TODO: 로그인 성공 시 메인 화면(예: HomeActivity)으로 이동
-                                        // Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                        // startActivity(intent);
-                                        // finish();
+                                        Intent intent = new Intent(LoginActivity.this, LoadingActivity.class);
+                                        startActivity(intent);
+                                        finish();
 
                                     } else {
-                                        // ✅ 2-2. 인증 미완료
+                                        // 2-2. 인증 미완료
                                         Log.w(TAG, "Email is not verified.");
                                         binding.failedLogin.setVisibility(View.VISIBLE);
                                         binding.failedLogin.setText("이메일 인증이 필요합니다. 인증메일을 보냈습니다"); // 오류 메시지 변경
