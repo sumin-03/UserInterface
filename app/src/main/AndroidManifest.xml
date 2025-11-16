@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UserInterface">
         <activity
+            android:name=".LoadingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".FindPasswordActivity"
             android:exported="false" />
         <activity

@@ -21,7 +21,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
-
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 public class SignUpActivity extends AppCompatActivity {
@@ -31,6 +31,8 @@ public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     private static final String TAG = "SignUp";
+
+    private FirebaseFirestore db;
 
 
     @Override
@@ -48,6 +50,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         //FirebaseAuth 인스턴스 초기화
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         binding.signUpEmail.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -71,20 +74,28 @@ public class SignUpActivity extends AppCompatActivity {
             String email = binding.signUpEmail.getText().toString().trim();
             String password = binding.signUpPassword.getText().toString().trim();
             String passwordConfirm = binding.checkPassword.getText().toString().trim(); // 비밀번호 확인
+            String nickname = binding.nickname.getText().toString().trim(); //nickname 초기값
 
             // ---  유효성 검사 (Validation) ---
 
             // 기본 항목 비어있는지 검사
-            if (email.isEmpty() || password.isEmpty() || passwordConfirm.isEmpty()) {
+            if (email.isEmpty() || password.isEmpty() || passwordConfirm.isEmpty() || nickname.isEmpty()) {
                 Toast.makeText(this, "모든 항목을 입력해주세요.", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             //이메일 형식인지 체크
             if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                binding.signUpEmail.setError("올바른 이메일 형식이 아닙니다.");
+                binding.signUpEmail.requestFocus();
                 return;
             }
 
+            if(nickname.length() > 6 || nickname.length() < 2){
+                binding.nickname.setError("닉네임은 2글자 이상 6글자 이하이어야 합니다.");
+                binding.nickname.requestFocus();
+                return;
+            }
             //  비밀번호 일치 여부 검사
             if (!password.equals(passwordConfirm)) {
                 binding.checkPassword.setError("비밀번호가 일치하지 않습니다.");
@@ -112,47 +123,78 @@ public class SignUpActivity extends AppCompatActivity {
             binding.signUpPassword.setError(null);
             binding.checkPassword.setError(null);
 
-            mAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                // 회원가입 성공
-                                Log.d(TAG, "createUserWithEmail:success");
-                                FirebaseUser user = mAuth.getCurrentUser();
+            db.collection("users").whereEqualTo("nickname", nickname).get() //닉네임이 같은 지 확인
+                            .addOnCompleteListener(nicknameTask -> {
+                                if(nicknameTask.isSuccessful()){
+                                    if(nicknameTask.getResult().isEmpty()){
+                                        mAuth.createUserWithEmailAndPassword(email, password)
+                                                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                                        if (task.isSuccessful()) {
+                                                            // 회원가입 성공
+                                                            Log.d(TAG, "createUserWithEmail:success");
+                                                            FirebaseUser user = mAuth.getCurrentUser();
 
-                                if (user != null) {
-                                    user.sendEmailVerification()
-                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<Void> task) {
-                                                    if (task.isSuccessful()) {
-                                                        Log.d(TAG, "Email verification sent.");
-                                                        // (메일 발송 성공)
-                                                    } else {
-                                                        Log.e(TAG, "sendEmailVerification", task.getException());
-                                                        // (메일 발송 실패)
+                                                            User newUser = new User(nickname, email);
+                                                            if (user != null) {
+                                                                String uid = user.getUid();
+                                                                //유저 정보 저장
+                                                                db.collection("users").document(uid).set(newUser)
+                                                                        .addOnSuccessListener(  aVoid -> {
+                                                                            // (저장 성공 시) 이메일 인증 발송
+                                                                            Log.d(TAG, "User profile saved to Firestore.");
+                                                                            Toast.makeText(SignUpActivity.this, "회원가입 성공! 이메일 인증을 해주세요", Toast.LENGTH_LONG).show();
+                                                                            user.sendEmailVerification()
+                                                                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                                        @Override
+                                                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                                                            if (task.isSuccessful()) {
+                                                                                                Log.d(TAG, "Email verification sent.");
+                                                                                                // (메일 발송 성공)
+                                                                                            } else {
+                                                                                                Log.e(TAG, "sendEmailVerification", task.getException());
+                                                                                                // (메일 발송 실패)
+                                                                                            }
+                                                                                            finish(); // 회원가입 화면 종료
+                                                                                        }
+                                                                                    });
+
+                                                                        }).addOnFailureListener(e -> {
+                                                                            // (저장 실패 시)
+                                                                            Log.w(TAG, "Error saving user profile", e);
+                                                                            Toast.makeText(SignUpActivity.this, "오류: 프로필 저장에 실패했습니다. 다시 시도해주세요.", Toast.LENGTH_LONG).show();
+                                                                            user.delete();
+                                                                        });
+                                                            }
+                                                        } else {
+                                                            // 회원가입 실패
+                                                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+
+                                                            // 이메일이 이미 존재하여 충돌이 발생한 경우
+                                                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                                                binding.signUpEmail.setError("이미 사용 중인 이메일입니다.");
+                                                                binding.signUpEmail.requestFocus();
+                                                            }
+                                                        }
                                                     }
-                                                }
-                                            });
+                                                });
+                                    } else{
+                                        //닉네입 이미 존재
+                                        Log.w(TAG, "Nickname already Exist");
+                                        binding.nickname.setError("이미 존재하는 닉네임입니다.");
+                                        binding.nickname.requestFocus();
+                                    }
+                                }else {
+                                    //닉네임 확인 실패
+                                    Log.w(TAG, "Error checking nickname", nicknameTask.getException());
+                                    Toast.makeText(this, "닉네임 확인 중 오류가 발생했습니다.", Toast.LENGTH_SHORT).show();
                                 }
-                                finish(); // 회원가입 화면 종료
-                            } else {
-                                // 회원가입 실패
-                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            });
 
-                                // 이메일이 이미 존재하여 충돌이 발생한 경우
-                                if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                                    binding.signUpEmail.setError("이미 사용 중인 이메일입니다.");
-                                    binding.signUpEmail.requestFocus();
-                                }
-                            }
-                        }
-                    });
         });
 
         binding.backButton.setOnClickListener(v -> {
-            startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
             finish();
         });
     }

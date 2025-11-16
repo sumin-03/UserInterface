@@ -10,21 +10,21 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.userinterface.databinding.ActivityFindPasswordBinding; // 1. 바인딩 임포트
+import com.example.userinterface.databinding.ActivityFindPasswordBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class FindPasswordActivity extends AppCompatActivity {
 
-    private ActivityFindPasswordBinding binding; //  바인딩 변수
+    private ActivityFindPasswordBinding binding;
     private FirebaseAuth mAuth;
     private static final String TAG = "FindPassword";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityFindPasswordBinding.inflate(getLayoutInflater()); // 3. 바인딩 초기화
+        binding = ActivityFindPasswordBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // FirebaseAuth 인스턴스 초기화
