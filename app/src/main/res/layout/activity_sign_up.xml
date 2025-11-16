@@ -53,6 +53,18 @@
             android:inputType="textEmailAddress" />
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="닉네임" />
+
+        <EditText
+            android:id="@+id/nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="2~6글자 사이"
+            android:inputType="text" />
+
+        <TextView
             android:id="@+id/failed_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
