@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".PartsSearchHDDspec">
+
+    <ImageView
+        android:id="@+id/iv_hdd_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:contentDescription="hdd 이미지"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@android:drawable/ic_menu_camera" />
+
+    <TextView
+        android:id="@+id/tv_hdd_model_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Intel Core i7-14700K"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_hdd_image" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_hdd_model_name" />
+
+    <TextView
+        android:id="@+id/label_manufacturer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="25dp"
+        android:text="제조사"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+    <TextView
+        android:id="@+id/label_storage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="용량"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_manufacturer" />
+
+    <TextView
+        android:id="@+id/label_formfactor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="폼팩터"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_storage" />
+
+    <TextView
+        android:id="@+id/label_pcie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="PCIe"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_formfactor" />
+
+    <TextView
+        android:id="@+id/label_dram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="DRAM 탑재"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_pcie" />
+
+    <TextView
+        android:id="@+id/label_write"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="순차쓰기속도"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_dram" />
+
+    <TextView
+        android:id="@+id/label_read"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="순차읽기속도"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_write" />
+
+    <TextView
+        android:id="@+id/label_write_IOPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="쓰기IOPS"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_read" />
+
+    <TextView
+        android:id="@+id/label_read_IOPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="읽기IOPS"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_write_IOPS" />
+
+
+    <TextView
+        android:id="@+id/value_manufacturer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="Intel"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_manufacturer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_manufacturer" />
+
+    <TextView
+        android:id="@+id/value_storage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="용량"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_storage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_storage" />
+
+    <TextView
+        android:id="@+id/value_formfactor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="inch"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_formfactor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_formfactor" />
+
+    <TextView
+        android:id="@+id/value_pcie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="28"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_pcie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_pcie" />
+
+    <TextView
+        android:id="@+id/value_dram"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="3.4 GHz"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_dram"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_dram" />
+
+
+    <TextView
+        android:id="@+id/value_write"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="쓰기속도"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_write"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_write" />
+
+    <TextView
+        android:id="@+id/value_read"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="33 MB"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_read"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_read" />
+
+    <TextView
+        android:id="@+id/value_write_IOPS"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="기록방식"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_write_IOPS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_write_IOPS" />
+
+
+    <TextView
+        android:id="@+id/value_read_IOPS"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="기록방식"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_read_IOPS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_read_IOPS" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

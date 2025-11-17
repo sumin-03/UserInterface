@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".PartsSearchMainboardspec">
+
+    <ImageView
+        android:id="@+id/iv_mainboard_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:contentDescription="mainboard 이미지"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@android:drawable/ic_menu_camera" />
+
+    <TextView
+        android:id="@+id/tv_mainboard_model_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="메인보드"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_mainboard_image" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_mainboard_model_name" />
+
+    <TextView
+        android:id="@+id/label_manufacturer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="25dp"
+        android:text="제조사"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+    <TextView
+        android:id="@+id/label_chipset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="칩셋"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_manufacturer" />
+
+    <TextView
+        android:id="@+id/label_socket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="소켓"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_chipset" />
+
+    <TextView
+        android:id="@+id/label_pcie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="PCIe"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_socket" />
+
+    <TextView
+        android:id="@+id/label_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="사이즈"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_pcie" />
+
+    <TextView
+        android:id="@+id/label_memVer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="메모리 버전"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_size" />
+
+    <TextView
+        android:id="@+id/label_memMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="최대 메모리"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_memVer" />
+
+    <TextView
+        android:id="@+id/label_memSlot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="메모리 슬롯"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_memMax" />
+
+    <TextView
+        android:id="@+id/label_m2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="M.2 슬롯"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_memSlot" />
+
+    <TextView
+        android:id="@+id/label_sata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="25dp"
+        android:text="SATA 슬롯"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_m2" />
+
+    <TextView
+        android:id="@+id/value_manufacturer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="Intel"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_manufacturer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_manufacturer" />
+
+    <TextView
+        android:id="@+id/value_chipset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="칩셋"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_chipset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_chipset" />
+
+    <TextView
+        android:id="@+id/value_socket"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="소켓"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_socket"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_socket" />
+
+    <TextView
+        android:id="@+id/value_pcie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="pcie"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_pcie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_pcie" />
+
+    <TextView
+        android:id="@+id/value_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="사이즈"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_size" />
+
+    <TextView
+        android:id="@+id/value_memVer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="메모리 버전"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_memVer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_memVer" />
+
+    <TextView
+        android:id="@+id/value_memMax"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="최대 메모리"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_memMax"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_memMax" />
+
+    <TextView
+        android:id="@+id/value_memSlot"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="메모리 슬롯"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_memSlot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_memSlot" />
+
+    <TextView
+        android:id="@+id/value_m2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="M.2 슬롯"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_m2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_m2" />
+
+    <TextView
+        android:id="@+id/value_SATA"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="end"
+        android:text="SATA 슬롯"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_sata"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_sata" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

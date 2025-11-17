@@ -12,6 +12,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UserInterface">
         <activity
+            android:name=".PartsSearchSSDspec"
+            android:exported="false" />
+        <activity
+            android:name=".PartsSearchRAMspec"
+            android:exported="false" />
+        <activity
+            android:name=".PartsSearchPowerspec"
+            android:exported="false" />
+        <activity
+            android:name=".PartsSearchMainboardspec"
+            android:exported="false" />
+        <activity
+            android:name=".PartsSearchHDDspec"
+            android:exported="false" />
+        <activity
+            android:name=".PartsSearchGPUspec"
+            android:exported="false" />
+        <activity
+            android:name=".PartsSearchCPUspec"
+            android:exported="false" />
+        <activity
+            android:name=".PartsSearchCoolerspec"
+            android:exported="false" />
+        <activity
+            android:name=".PartsSearchCasespec"
+            android:exported="false" />
+        <activity android:name=".PartsSearchMain"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".LoadingActivity"
             android:exported="false" />
         <activity
@@ -25,21 +60,11 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
     </application>
 
