@@ -1,0 +1,52 @@
+{
+  "hdd": [
+    {
+      "name": "Seagate BarraCuda 5400/256M 8TB",
+      "manufacturer": "Seagate",
+      "storage": "8",
+      "inch": "3.5",
+      "interface": "SATA3",
+      "RPM": "5400",
+      "buffer": "256",
+      "write": "190",
+      "read": "190",
+      "recode": "SMR"
+    },
+    {
+      "name": "Seagate BarraCuda 5400/256M 6TB",
+      "manufacturer": "Seagate",
+      "storage": "6",
+      "inch": "3.5",
+      "interface": "SATA3",
+      "RPM": "5400",
+      "buffer": "256",
+      "write": "190",
+      "read": "190",
+      "recode": "SMR"
+    },
+    {
+      "name": "Seagate BarraCuda 5400/256M 4TB",
+      "manufacturer": "Seagate",
+      "storage": "4",
+      "inch": "3.5",
+      "interface": "SATA3",
+      "RPM": "5400",
+      "buffer": "256",
+      "write": "190",
+      "read": "190",
+      "recode": "SMR"
+    },
+    {
+      "name": "Seagate BarraCuda 5400/256M 3TB",
+      "manufacturer": "Seagate",
+      "storage": "3",
+      "inch": "3.5",
+      "interface": "SATA3",
+      "RPM": "5400",
+      "buffer": "256",
+      "write": "190",
+      "read": "190",
+      "recode": "SMR"
+    }
+  ]
+}
