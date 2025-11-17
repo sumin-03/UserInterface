@@ -1,5 +1,6 @@
 package com.example.userinterface;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,12 +19,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.userinterface.databinding.ActivityPartsSearchMainBinding;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore; // (추가)
 import com.google.firebase.firestore.QueryDocumentSnapshot; // (추가)
 import com.google.gson.Gson; // (추가)
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class PartsSearchMain extends AppCompatActivity implements PartsSearchAdapter.OnItemClickListener {
     private RecyclerView recyclerView;
@@ -43,6 +47,7 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
 
     private ActivityPartsSearchMainBinding binding;
     private FirebaseFirestore db;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +59,7 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
         setContentView(binding.getRoot());
 
         db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         recyclerView = binding.partsRecyclerView;
         searchView = binding.searchView;
@@ -100,8 +106,74 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
             loadCpuData();
             Log.d("KSM", "loadCpuData()");
         }
+
+        binding.toolbar.setOnClickListener(v -> { // 위에 toolbar 클릭시 홈으로
+            binding.bottomNavigation.setSelectedItemId(R.id.navigation_home);
+        });
+
+        binding.bottomNavigation.setSelectedItemId(R.id.navigation_search); //내비게이션 부품 검색으로 설정
+        setupNavigationListeners(); //내비게이션 바
     }
 
+    private void setupNavigationListeners() { //밑에 내비게이션 바 리스너
+        binding.bottomNavigation.setOnItemSelectedListener(Item -> {
+            int itemId = Item.getItemId();
+            User user = getIntent().getSerializableExtra("USER_PROFILE", User.class);
+
+            if(itemId == R.id.navigation_home){
+                Log.d("MOVE", "MoveHome");
+                Intent intent = new Intent(PartsSearchMain.this, HomeActivity.class);
+                intent.putExtra("USER_PROFILE", user);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                ActivityOptions options = ActivityOptions.makeCustomAnimation(this, 0, 0);
+                startActivity(intent, options.toBundle());
+                return true;
+            }
+
+            else if (itemId == R.id.navigation_search) {
+                Log.d("STAY", "PartsSearchMain");
+                return true;
+            }
+
+            else if (itemId == R.id.navigation_guide) {
+                Log.d("MOVE", "MoveGuide");
+                Toast.makeText(this, "가이드로 이동!", Toast.LENGTH_SHORT).show(); //이거 지우기
+                // TODO: 가이드 액티비티로 이동(User정보 포함해서 넘겨주기)
+                // Intent intent = new Intent(this, GuideActivity.class);
+                // startActivity(intent);
+                return true;
+            }
+
+            else if (itemId == R.id.navigation_recommended_builds) {
+                Log.d("MOVE", "MoveRecommend");
+                Toast.makeText(this, "견적 추천으로 이동!!", Toast.LENGTH_SHORT).show(); //이거 지우기
+                // TODO: 견적 추천 액티비티로 이동(User정보 포함해서 넘겨주기)
+                // Intent intent = new Intent(this, RecommendActivity.class);
+                // startActivity(intent);
+                return true;
+            }
+
+            else if (itemId == R.id.navigation_community) {
+                Log.d("MOVE", "MoveCommunity");
+                Toast.makeText(this, "커뮤니티", Toast.LENGTH_SHORT).show(); //이거 지우기
+                // TODO: 커뮤니티 액티비티로 이동(User정보 포함해서 넘겨주기)
+                // Intent intent = new Intent(this, CommunityActivity.class);
+                // startActivity(intent);
+                return true;
+            }
+
+            else if (itemId == R.id.navigation_profile) {
+                Log.d("MOVE", "MoveProfile");
+                Toast.makeText(this, "내 프로필로 이동!", Toast.LENGTH_SHORT).show(); //이거 지우기
+                // TODO: 내 프로필로 액티비티로 이동(User정보 포함해서 넘겨주기)
+                // Intent intent = new Intent(this, MyPCActivity.class);
+                // startActivity(intent);
+                return true;
+            }
+
+            return false;
+        });
+    }
     private void setupAddButtonListener() {
         binding.addPartButton.setOnClickListener(v -> {
             Fragment fragmentToAdd;
@@ -615,5 +687,11 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
                 startActivity(intent);
                 break;
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        binding.bottomNavigation.setSelectedItemId(R.id.navigation_search);
     }
 }

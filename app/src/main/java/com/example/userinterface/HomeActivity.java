@@ -1,5 +1,6 @@
 package com.example.userinterface;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -49,6 +50,9 @@ public class HomeActivity extends AppCompatActivity {
         //초기화
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+
+
+        binding.bottomNavigation.setSelectedItemId(R.id.navigation_home); //내비게이션바 홈으로 설정
 
         displayUserProfile();// LoadingActivity 에서 User가져옴
         setupCardClickListeners(); //홈 화면 가운데 4개 리스너
@@ -141,19 +145,20 @@ public class HomeActivity extends AppCompatActivity {
     private void setupNavigationListeners() { //밑에 내비게이션 바 리스너
         binding.bottomNavigation.setOnItemSelectedListener(Item -> {
             int itemId = Item.getItemId();
+            User user = getIntent().getSerializableExtra("USER_PROFILE", User.class);
 
             if(itemId == R.id.navigation_home){
-                Log.d("MOVE", "MoveHome");
-                Toast.makeText(this, "홈으로 이동!", Toast.LENGTH_SHORT).show(); //이거 지우기
+                Log.d("STAY", "Home");
                 return true;
             }
 
             else if (itemId == R.id.navigation_search) {
-                Log.d("MOVE", "MoveFindComponent");
-                Toast.makeText(this, "부품 검색으로 이동!", Toast.LENGTH_SHORT).show(); //이거 지우기
-                // TODO: 부품 검색 액티비티로 이동(User정보 포함해서 넘겨주기)
-                // Intent intent = new Intent(this, SearchActivity.class);
-                // startActivity(intent);
+                Log.d("MOVE", "MovePartsSearchMain");
+                Intent intent = new Intent(HomeActivity.this, PartsSearchMain.class);
+                intent.putExtra("USER_PROFILE", user);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                ActivityOptions options = ActivityOptions.makeCustomAnimation(this, 0, 0);
+                startActivity(intent, options.toBundle());
                 return true;
             }
 
@@ -195,5 +200,11 @@ public class HomeActivity extends AppCompatActivity {
 
             return false;
         });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        binding.bottomNavigation.setSelectedItemId(R.id.navigation_home);
     }
 }
