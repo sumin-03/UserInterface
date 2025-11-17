@@ -50,6 +50,7 @@ public class PostListFragment extends Fragment {
         recyclerView = view.findViewById(R.id.post_recycler_view);
         setupRecyclerView();
         return view;
+
     }
 
     private void setupRecyclerView() {
@@ -87,12 +88,13 @@ public class PostListFragment extends Fragment {
         // RecyclerView에 어댑터 및 레이아웃 매니저 설정
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
+        recyclerView.setItemAnimator(null);
     }
 
     // Fragment가 화면에 보일 때 리스너 시작
     @Override
-    public void onStart() {
-        super.onStart();
+    public void onResume() { // onStart() -> onResume()
+        super.onResume();
         if (adapter != null) {
             adapter.startListening();
         }
@@ -100,8 +102,8 @@ public class PostListFragment extends Fragment {
 
     // Fragment가 화면에서 사라질 때 리스너 중지
     @Override
-    public void onStop() {
-        super.onStop();
+    public void onPause() { // onStop() -> onPause()
+        super.onPause();
         if (adapter != null) {
             adapter.stopListening();
         }
