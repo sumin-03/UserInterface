@@ -7,6 +7,7 @@ import java.util.Date;
 
 public class User implements Serializable {
 
+    private String uid;
     private String nickname; //닉네임
     private String email; // '아이디'를 이메일로 사용
     private long level; // 커뮤니티 레벨
@@ -18,7 +19,8 @@ public class User implements Serializable {
     }
 
     // 회원가입 시 사용할 생성자
-    public User(String nickname, String email) {
+    public User(String uid, String nickname, String email) {
+        this.uid = uid;
         this.nickname = nickname;
         this.email = email;
         this.level = 1;         // 가입 시 레벨 1
@@ -26,6 +28,7 @@ public class User implements Serializable {
     }
 
     // Firebase 용 Getter 추가
+    public String getUid() { return uid; }
     public String getNickname() { return nickname; }
     public String getEmail() { return email; }
     public long getLevel() { return level; }

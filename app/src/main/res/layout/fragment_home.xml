@@ -136,6 +136,7 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/blue"
                 app:cardElevation="2dp">
 
                 <LinearLayout
@@ -168,6 +169,7 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/blue"
                 app:cardElevation="2dp">
 
                 <LinearLayout
@@ -200,6 +202,7 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/blue"
                 app:cardElevation="2dp">
 
                 <LinearLayout
@@ -233,6 +236,7 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/blue"
                 app:cardElevation="2dp">
 
                 <LinearLayout
@@ -271,8 +275,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            app:tabIndicatorColor="@color/design_default_color_primary"
-            app:tabSelectedTextColor="@color/design_default_color_primary"
+            app:tabIndicatorColor="#1565C0"
+            app:tabSelectedTextColor="#1565C0"
             app:tabTextColor="@android:color/darker_gray">
 
         </com.google.android.material.tabs.TabLayout>

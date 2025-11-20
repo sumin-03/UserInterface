@@ -22,6 +22,17 @@ public class Post {
     public Post() {
     }
 
+    public Post(String title, String content, String category, String userId, String userName) {
+        this.title = title;
+        this.content = content;
+        this.category = category;
+        this.userId = userId;
+        this.userName = userName;
+        this.views = 0;
+        this.likes = 0;
+    }
+
+
     // Firebase 용 Getter 추가
     public String getTitle() { return title; }
     public String getContent() { return content; }

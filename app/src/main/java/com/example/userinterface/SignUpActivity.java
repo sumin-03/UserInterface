@@ -136,9 +136,10 @@ public class SignUpActivity extends AppCompatActivity {
                                                             Log.d(TAG, "createUserWithEmail:success");
                                                             FirebaseUser user = mAuth.getCurrentUser();
 
-                                                            User newUser = new User(nickname, email);
                                                             if (user != null) {
                                                                 String uid = user.getUid();
+
+                                                                User newUser = new User(uid, nickname, email);
                                                                 //유저 정보 저장
                                                                 db.collection("users").document(uid).set(newUser)
                                                                         .addOnSuccessListener(  aVoid -> {

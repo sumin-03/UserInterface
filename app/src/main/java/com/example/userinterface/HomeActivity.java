@@ -47,7 +47,10 @@ public class HomeActivity extends AppCompatActivity {
 
         // 초기 프래그먼트 설정 (HomeFragment)
         if (savedInstanceState == null) {
-            loadFragment(HomeFragment.newInstance(currentUser));
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, HomeFragment.newInstance(currentUser))
+                    .commit();;
         }
 
         // 내비게이션 바 리스너 설정
@@ -58,9 +61,11 @@ public class HomeActivity extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.navigation_home) { //Fragment로 이동
+                    Log.d("NAVIGATION", "goHomeFragment");
                     selectedFragment = HomeFragment.newInstance(currentUser);
 
                 } else if (itemId == R.id.navigation_search) { //Activity로 이동
+                    Log.d("NAVIGATION", "goSearchMainActivity");
                     Intent intent = new Intent(HomeActivity.this, PartsSearchMain.class);
                     intent.putExtra("USER_PROFILE", currentUser); // 유저 정보 넘겨주기
                     startActivity(intent);
@@ -73,7 +78,8 @@ public class HomeActivity extends AppCompatActivity {
                 } else if (itemId == R.id.navigation_recommended_builds) {
                     //selectedFragment = RecommendFragment.newInstance(currentUser);
                 } else if (itemId == R.id.navigation_community) {
-                    //selectedFragment = CommunityFragment.newInstance(currentUser);
+                    Log.d("NAVIGATION", "CommunityMainFragment");
+                    selectedFragment = CommunityMainFragment.newInstance(currentUser);
                 } else if (itemId == R.id.navigation_profile) {
                     //selectedFragment = ProfileFragment.newInstance(currentUser);
                 }
@@ -92,6 +98,7 @@ public class HomeActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null) // back 누를 시 전 fragment로
                 .commit();
     }
 
