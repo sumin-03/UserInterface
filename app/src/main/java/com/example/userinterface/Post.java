@@ -1,9 +1,11 @@
 package com.example.userinterface;
 
 import com.google.firebase.firestore.ServerTimestamp;
+
+import java.io.Serializable;
 import java.util.Date;
 
-public class Post {
+public class Post implements Serializable {
 
     // 게시글 내용
     private String title;       // 제목
@@ -17,6 +19,7 @@ public class Post {
     private @ServerTimestamp Date timestamp; // 서버 시간 기준 작성 시간
     private long views;         // 조회수
     private long likes;         // 추천수
+    private long countComments; // 댓글 수
 
     // Firestore가 쓸 빈 생성자
     public Post() {
@@ -30,6 +33,7 @@ public class Post {
         this.userName = userName;
         this.views = 0;
         this.likes = 0;
+        this.countComments = 0;
     }
 
 
@@ -42,4 +46,5 @@ public class Post {
     public Date getTimestamp() { return timestamp; }
     public long getViews() { return views; }
     public long getLikes() { return likes; }
+    public long getCountComments() { return countComments; }
 }

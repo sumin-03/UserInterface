@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,6 +23,7 @@ public class PostListFragment extends Fragment {
     private RecyclerView recyclerView;
     private String queryType = "latest"; // 첫 시작 latest
     private String currentUserId;
+    private User currentUser;
 
     // Fragment가 어떤 데이터를 로드해야 하는지 알려주는 '생성자' 역할
     public static PostListFragment newInstance(String queryType) {
@@ -51,6 +53,17 @@ public class PostListFragment extends Fragment {
         setupRecyclerView();
         return view;
 
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        // ViewModel을 통해 최신 User 정보 가져오기 (HomeFragment와 데이터 공유)
+        new ViewModelProvider(requireActivity()).get(UserViewModel.class).getUser().observe(getViewLifecycleOwner(), user -> {
+            if (user != null) {
+                this.currentUser = user;
+            }
+        });
     }
 
     private void setupRecyclerView() {
@@ -85,6 +98,22 @@ public class PostListFragment extends Fragment {
         // 어댑터 생성
         adapter = new PostAdapter(options);
 
+        // 아이템 클릭 리스너 설정
+        adapter.setOnItemClickListener(((document, position) -> {
+            String postId = document.getId();
+
+
+            //상세 화면 생성 (클릭된 글 ID + 내 유저 정보 전달)
+            PostDetailFragment detailFragment = PostDetailFragment.newInstance(postId, currentUser);
+
+            //화면 전환
+            requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.fragment_container, detailFragment)
+                    .addToBackStack(null)
+                    .commit();
+        }));
         // RecyclerView에 어댑터 및 레이아웃 매니저 설정
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);

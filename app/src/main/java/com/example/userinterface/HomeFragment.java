@@ -58,7 +58,6 @@ public class HomeFragment extends Fragment {
         displayUserProfile();
         setupCardClickListeners();
         setupCommunityViewPager();
-
         //방송 듣기 설정
         new ViewModelProvider(requireActivity()).get(UserViewModel.class).getUser().observe(getViewLifecycleOwner(), updatedUser -> {
             //user 정보가 바뀔 때 실행

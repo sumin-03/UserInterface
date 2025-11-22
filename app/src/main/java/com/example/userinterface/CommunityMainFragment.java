@@ -84,6 +84,9 @@ public class CommunityMainFragment extends Fragment {
         //초기 데이터 로드
         updateRecyclerViewQuery(0);
 
+        //post detail 클릭 리스너
+        setupPostDetailClickListeners();
+
         //글쓰기 버튼 클릭 리스너 설정
         binding.communityWritePost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -184,14 +187,36 @@ public class CommunityMainFragment extends Fragment {
                 .build();
 
         if (adapter != null){
-            // 어댑터가 없으면 새로 만듦
+            // 어댑터가 있으면 옵션만 갈아끼움 (리스너 유지됨)
             adapter.updateOptions(options);
         }
         else {
-            // 어댑터가 이미 있으면 옵션만 갈아끼움
+            // 어댑터가 없어서 새로 만들 경우
             adapter = new PostAdapter(options);
+            // [중요] 어댑터를 새로 만들었으면 리스너도 다시 달아줘야 함
+            setupPostDetailClickListeners();
         }
         binding.communityRecyclerview.setAdapter(adapter);
+    }
+
+    private void setupPostDetailClickListeners(){
+        // 어댑터가 생성되지 않았을 경우 방지
+        if (adapter == null) return;
+        adapter.setOnItemClickListener(((document, position) -> {
+            // 클릭한 아이템의 Document ID 가져오기
+            String postId = document.getId();
+
+            // 상세 화면 Fragment 생성 (ID 전달)
+            PostDetailFragment detailFragment = PostDetailFragment.newInstance(postId, currentUser);
+
+            //화면 전환
+            requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.fragment_container, detailFragment)
+                    .addToBackStack(null)
+                    .commit();
+        }));
     }
 
     // Fragment 생명주기 관리: 화면에 보일 때 리스너 시작
