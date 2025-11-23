@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottom_navigation"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:background="@color/white"-->
+<!--        app:menu="@menu/bottom_navigation_menu" />-->
+
+    <ScrollView
+        android:id="@+id/top_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/home_welcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="마이페이지"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/home_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="오늘 어떤 PC를 구성해볼까요?"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_welcome" />
+
+                <ImageView
+                    android:id="@+id/my_page_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_setting"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#C2FFFFFF"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#E3F2FD"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/home_profile_logo"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_account"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/home_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="..."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/home_profile_logo"
+                        app:layout_constraintTop_toTopOf="@id/home_profile_logo" />
+
+                    <TextView
+                        android:id="@+id/home_join_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="..."
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="@id/home_username"
+                        app:layout_constraintTop_toBottomOf="@id/home_username" />
+
+                    <TextView
+                        android:id="@+id/home_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lv.1"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ProgressBar
+                        android:id="@+id/home_experience_bar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="8dp"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/ic_progressbar_bg"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/home_experience_points"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/home_profile_logo" />
+
+                    <TextView
+                        android:id="@+id/home_experience_points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/100"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/home_experience_bar"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/home_experience_bar" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#DDDDDD"/>
+
+            <LinearLayout
+                android:id="@+id/goto_my_pc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="나만의 PC"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/my_cpu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CPU : ..."
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/my_gpu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GPU : "
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/my_mainboard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="메인보드 : "
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/my_ram"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RAM : "
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/my_power"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="파워 : "
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/my_case"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="케이스 : "
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/my_storage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="저장장치 : "
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="자세히 보기>"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/point_guide_background"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="7dp"
+                    android:src="@drawable/ic_medal" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Lv.10 이상"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="기본적인 이모티콘 및 스탬프 사용 가능"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/point_guide_background"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:src="@drawable/ic_medal_nd"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="12dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Lv.20 이상"
+                        android:textSize="16dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="움직이는 이모티콘 및 스탬프 사용 가능"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/point_guide_background"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:src="@drawable/ic_medal_rd"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="12dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Lv.30 이상"
+                        android:textSize="16dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="GIF 및 움직이는 유저 아이콘 등록 및 사용 가능"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/point_guide_background"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="점수 획득 방법"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginRight="8dp"
+                            android:src="@drawable/ic_heart" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="본인의 게시글에 좋아요 당 +1"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginRight="8dp"
+                            android:src="@drawable/ic_fire" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="실시간 인기글 달성 시 +3"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginRight="8dp"
+                            android:src="@drawable/ic_up" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="추천글 달성 시 +5"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
