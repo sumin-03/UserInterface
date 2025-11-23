@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    tools:context=".RecommendQuotationHomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="&lt;"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="어떤 방식으로 추천해드릴까요?"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"/>
+
+        <Button
+            android:id="@+id/buttonParts"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:text="원하는 부품 기준으로\n견적 추천"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:lineSpacingExtra="6dp"
+            android:backgroundTint="#00BCD4"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="24dp"
+            app:rippleColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/buttonApps"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:text="원하는 게임 혹은 앱 기준으로\n견적 추천"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:lineSpacingExtra="6dp"
+            android:backgroundTint="#00BCD4"
+            app:cornerRadius="12dp"
+            app:rippleColor="@android:color/white" />
+
+    </LinearLayout> </LinearLayout>
