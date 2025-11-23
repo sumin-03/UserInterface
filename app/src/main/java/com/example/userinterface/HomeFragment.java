@@ -1,7 +1,7 @@
 package com.example.userinterface;
 
-import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +10,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.userinterface.databinding.FragmentHomeBinding;
+import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.text.SimpleDateFormat;
@@ -20,10 +22,11 @@ import java.util.Locale;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
-    private User user;
+    private User currentUser;
     private HomePagerAdapter pagerAdapter;
     private String[] tabTitles = new String[]{"최신 게시글", "내가 쓴 게시글", "북마크"};
 
+    private String TAG = "HomeFragment";
     // 생성자 패턴
     public static HomeFragment newInstance(User user) {
         HomeFragment fragment = new HomeFragment();
@@ -37,7 +40,7 @@ public class HomeFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            user = getArguments().getSerializable("USER_PROFILE", User.class);
+            currentUser = getArguments().getSerializable("USER_PROFILE", User.class);
         }
     }
 
@@ -55,24 +58,39 @@ public class HomeFragment extends Fragment {
         displayUserProfile();
         setupCardClickListeners();
         setupCommunityViewPager();
+        //방송 듣기 설정
+        new ViewModelProvider(requireActivity()).get(UserViewModel.class).getUser().observe(getViewLifecycleOwner(), updatedUser -> {
+            //user 정보가 바뀔 때 실행
+            if (updatedUser != null) {
+                //현재 프래그먼트의 변수 업데이트
+                currentUser = updatedUser;
+                Log.d(TAG, "UserUpdate");
+
+                //User 프로필 재설정
+                displayUserProfile();
+            }
+        });
     }
 
     private void displayUserProfile() {
-        if (user != null) {
-            binding.homeUsername.setText(user.getNickname());
-            binding.homeLevel.setText("Lv." + user.getLevel());
+        if (currentUser != null) {
+            binding.homeUsername.setText(currentUser.getNickname());
+            binding.homeLevel.setText("Lv." + currentUser.getLevel());
             binding.homeExperienceBar.setMax(100);
-            binding.homeExperienceBar.setProgress((int) user.getExperience());
-            binding.homeExperiencePoints.setText(user.getExperience() + "/100");
-            binding.homeWelcome.setText("안녕하세요, " + user.getNickname() + "님!");
+            binding.homeExperienceBar.setProgress((int) currentUser.getExperience());
+            binding.homeExperiencePoints.setText(currentUser.getExperience() + "/100");
+            binding.homeWelcome.setText("안녕하세요, " + currentUser.getNickname() + "님!");
 
-            if (user.getJoinDate() != null) {
+            if (currentUser.getJoinDate() != null) {
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd 가입", Locale.KOREA);
-                String formattedDate = sdf.format(user.getJoinDate());
+                String formattedDate = sdf.format(currentUser.getJoinDate());
                 binding.homeJoinDate.setText(formattedDate);
             }
+            Log.d(TAG, "load user profile");
+
         } else {
             Toast.makeText(getContext(), "프로필 로드 실패", Toast.LENGTH_SHORT).show();
+            Log.w(TAG, "failed load profile");
         }
     }
 
