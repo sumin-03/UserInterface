@@ -78,7 +78,7 @@ public class HomeActivity extends AppCompatActivity {
                     Log.d("MOVE", "CommunityMainFragment");
                     selectedFragment = CommunityMainFragment.newInstance(currentUser);
                 } else if (itemId == R.id.navigation_profile) {
-                    //selectedFragment = ProfileFragment.newInstance(currentUser);
+                    selectedFragment = MyPageFragment.newInstance(currentUser);
                 }
 
                 if (selectedFragment != null) { // null 이 아니면 탭 선택 변경
