@@ -69,10 +69,13 @@ public class HomeActivity extends AppCompatActivity {
 
                     // 액티비티로 떠나므로 현재 탭 선택 상태를 바꾸지 않으려면 false 반환
                     return false;
-
                 } else if (itemId == R.id.navigation_guide) {
                     //selectedFragment = GuideFragment.newInstance(currentUser);
                 } else if (itemId == R.id.navigation_recommended_builds) {
+                    Log.d("MOVE", "goRecommendBuild");
+                    Intent intent = new Intent(HomeActivity.this, RecommendQuotationHomeActivity.class);
+                    intent.putExtra("USER_PROFILE", currentUser); // 유저 정보 넘겨주기
+                    startActivity(intent);
                     //selectedFragment = RecommendFragment.newInstance(currentUser);
                 } else if (itemId == R.id.navigation_community) {
                     Log.d("MOVE", "CommunityMainFragment");
