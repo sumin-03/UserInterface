@@ -50,7 +50,7 @@ public class PostListFragment extends Fragment {
         // fragment_post_list.xml을 inflate
         View view = inflater.inflate(R.layout.fragment_post_list, container, false);
         recyclerView = view.findViewById(R.id.post_recycler_view);
-        setupRecyclerView();
+
         return view;
 
     }
@@ -62,41 +62,56 @@ public class PostListFragment extends Fragment {
         new ViewModelProvider(requireActivity()).get(UserViewModel.class).getUser().observe(getViewLifecycleOwner(), user -> {
             if (user != null) {
                 this.currentUser = user;
+                setupRecyclerView();
             }
         });
     }
 
     private void setupRecyclerView() {
+        if (!"latest".equals(queryType) && currentUser == null) {
+            return;
+        }
         Query query;
 
         // 탭(queryType)에 따라 다른 쿼리 실행
         switch (queryType) {
             case "my_posts":
-                // "내가 쓴 게시글"
                 query = db.collection("posts")
-                        .whereEqualTo("userId", currentUserId)
-                        .orderBy("timestamp", Query.Direction.DESCENDING);
+                        .whereEqualTo("userId", currentUser.getUid())
+                        .orderBy("timestamp", Query.Direction.DESCENDING)
+                        .limit(5);
                 break;
-//            case "bookmarks":
-//                // TODO: 북마크 기능 구현 필요
-//                break;
+            case "bookmarks":
+                query = db.collection("users")
+                        .document(currentUser.getUid())
+                        .collection("bookmarks")
+                        .orderBy("timestamp", Query.Direction.DESCENDING)
+                        .limit(5);
+                break;
             case "latest":
             default:
                 // "최신 게시글"
                 query = db.collection("posts")
-                        .orderBy("timestamp", Query.Direction.DESCENDING);
+                        .orderBy("timestamp", Query.Direction.DESCENDING)
+                        .limit(5);
                 break;
         }
-
-        //  쿼리 결과 중 5개만 가져오도록 추가
-        query = query.limit(5);
 
         FirestoreRecyclerOptions<Post> options = new FirestoreRecyclerOptions.Builder<Post>()
                 .setQuery(query, Post.class) // 쿼리와 Post 모델 클래스 연결
                 .build();
 
-        // 어댑터 생성
-        adapter = new PostAdapter(options);
+        if (adapter != null) {
+            adapter.updateOptions(options);
+        } else {
+            adapter = new PostAdapter(options);
+            }
+
+        if ("bookmarks".equals(queryType)) {
+            adapter.setBookmarkMode(true); // 북마크면 숨김 모드 켜기
+        } else {
+            adapter.setBookmarkMode(false); // 아니면 일반 모드
+        }
 
         // 아이템 클릭 리스너 설정
         adapter.setOnItemClickListener(((document, position) -> {

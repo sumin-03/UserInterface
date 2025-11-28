@@ -30,8 +30,6 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:padding="12dp"
-        android:clickable="true"
-        android:focusable="true"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_bookmark_border"
         app:layout_constraintEnd_toEndOf="parent"
@@ -189,9 +187,10 @@
                 android:paddingBottom="12dp">
 
                 <ImageView
+                    android:id="@+id/icon_likes"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_thumb_up"
+                    android:src="@drawable/ic_thumb_up_border"
                     app:tint="@color/black" />
 
                 <TextView

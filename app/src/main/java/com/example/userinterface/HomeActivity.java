@@ -13,6 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.userinterface.databinding.ActivityHomeBinding;
 import com.google.android.material.navigation.NavigationBarView;
@@ -43,6 +44,9 @@ public class HomeActivity extends AppCompatActivity {
             Log.w(TAG, "cannot get User");
             Toast.makeText(this, "유저 정보를 불러오지 못했습니다.", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(HomeActivity.this, SignUpActivity.class));
+        }
+        if (currentUser != null) {
+            new ViewModelProvider(this).get(UserViewModel.class).setUser(currentUser);
         }
 
         // 초기 프래그먼트 설정 (HomeFragment)

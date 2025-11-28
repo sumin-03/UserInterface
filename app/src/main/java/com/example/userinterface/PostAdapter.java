@@ -3,6 +3,7 @@ package com.example.userinterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +25,14 @@ public class PostAdapter extends FirestoreRecyclerAdapter<Post, PostAdapter.Post
         public void setOnItemClickListener(OnItemClickListener listener) {
             this.listener = listener;
         }
+
+        // [추가] 북마크 모드인지 판별하는 플래그 (기본값 false)
+        private boolean isBookmarkMode = false;
+
+        // [추가] 외부에서 모드를 설정하는 메소드
+        public void setBookmarkMode(boolean isBookmarkMode) {
+            this.isBookmarkMode = isBookmarkMode;
+        }
     public PostAdapter(@NonNull FirestoreRecyclerOptions<Post> options) {
         super(options);
     }
@@ -35,8 +44,6 @@ public class PostAdapter extends FirestoreRecyclerAdapter<Post, PostAdapter.Post
         holder.title.setText(model.getTitle());
         holder.category.setText(model.getCategory());
         holder.user.setText(model.getUserName());
-
-        // long 타입을 String으로
         holder.views.setText(String.format(Locale.KOREA, "조회 : %d", model.getViews()));
         holder.likes.setText(String.format(Locale.KOREA, "추천 : %d", model.getLikes()));
         holder.comments.setText(String.format(Locale.KOREA, "%d", model.getCountComments()));
@@ -47,6 +54,28 @@ public class PostAdapter extends FirestoreRecyclerAdapter<Post, PostAdapter.Post
             holder.date.setText(sdf.format(model.getTimestamp()));
         } else {
             holder.date.setText("----.--.--");
+        }
+
+        if (isBookmarkMode) {
+            // 북마크 모드: 안 보이게 숨김
+            holder.views.setVisibility(View.GONE);
+            holder.likes.setVisibility(View.GONE);
+            holder.comments.setVisibility(View.GONE);
+            holder.separate1.setVisibility(View.GONE);
+            holder.separate2.setVisibility(View.GONE);
+            holder.imageView.setVisibility(View.GONE);
+        }
+        else {
+            // 일반 모드: 보이게 설정 + 데이터 연결
+            holder.views.setVisibility(View.VISIBLE);
+            holder.likes.setVisibility(View.VISIBLE);
+            holder.comments.setVisibility(View.VISIBLE);
+            holder.separate1.setVisibility(View.VISIBLE);
+            holder.separate2.setVisibility(View.VISIBLE);
+
+            holder.views.setText(String.format(Locale.KOREA, "조회 : %d", model.getViews()));
+            holder.likes.setText(String.format(Locale.KOREA, "추천 : %d", model.getLikes()));
+            holder.comments.setText(String.format(Locale.KOREA, "%d", model.getCountComments()));
         }
 
         // 아이템 클릭 이벤트 연결
@@ -70,8 +99,9 @@ public class PostAdapter extends FirestoreRecyclerAdapter<Post, PostAdapter.Post
 
     // ViewHolder 클래스
     static class PostViewHolder extends RecyclerView.ViewHolder {
-        TextView title, category, user, date, views, likes, comments;
+        TextView title, category, user, date, views, likes, comments,separate1, separate2;
 
+        ImageView imageView;
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
             // list_item_post.xml에 있는 TextView ID 연결
@@ -82,6 +112,9 @@ public class PostAdapter extends FirestoreRecyclerAdapter<Post, PostAdapter.Post
             views = itemView.findViewById(R.id.community_post_watch);
             likes = itemView.findViewById(R.id.community_post_thumb);
             comments = itemView.findViewById(R.id.community_post_comment_count);
+            separate1 = itemView.findViewById(R.id.separate1);
+            separate2 = itemView.findViewById(R.id.separate2);
+            imageView = itemView.findViewById(R.id.comment_image);
         }
     }
 }
