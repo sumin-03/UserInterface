@@ -170,11 +170,26 @@ public class CommunityMainFragment extends Fragment {
                         .orderBy("timestamp", Query.Direction.DESCENDING);
                 break;
             case 8: //내 글
-                query = db.collection("posts")
-                        .whereEqualTo("userId", currentUser.getUid())
-                        .orderBy("timestamp", Query.Direction.DESCENDING);
+                if (currentUser != null) {
+                    query = db.collection("posts")
+                            .whereEqualTo("userId", currentUser.getUid())
+                            .orderBy("timestamp", Query.Direction.DESCENDING);
+                } else {
+                    // 유저 정보 없으면 빈 리스트 표시
+                    query = db.collection("posts").limit(0);
+                }
                 break;
-            case 9: // TODO: 북마크 구현
+            case 9: //북마크
+                if(currentUser != null){
+                    query = db.collection("users")
+                            .document(currentUser.getUid())
+                            .collection("bookmarks")
+                            .orderBy("timestamp", Query.Direction.DESCENDING);
+                } else {
+                    // 유저 정보 없으면 빈 리스트 표시
+                    query = db.collection("posts").limit(0);
+                }
+                break;
             case 0: //최신글
             default:
                 query = db.collection("posts")
@@ -196,6 +211,13 @@ public class CommunityMainFragment extends Fragment {
             // [중요] 어댑터를 새로 만들었으면 리스너도 다시 달아줘야 함
             setupPostDetailClickListeners();
         }
+
+        if (tabPosition == 9) {
+            adapter.setBookmarkMode(true);
+        } else {
+            adapter.setBookmarkMode(false);
+        }
+
         binding.communityRecyclerview.setAdapter(adapter);
     }
 

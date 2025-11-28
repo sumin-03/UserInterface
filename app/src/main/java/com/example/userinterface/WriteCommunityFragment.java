@@ -87,7 +87,7 @@ public class WriteCommunityFragment extends Fragment {
 
     // 수정 모드일 때 화면 세팅
     private void initEditMode() {
-        binding.textCount.setText("글 수정 중"); // 상단 타이틀 변경 (필요 시)
+        binding.writeTitle.setText("글 수정 중"); // 상단 타이틀 변경 (필요 시)
         binding.btnPostSubmit.setText("수정"); // 버튼 글자 변경
 
         // 기존 내용 채워넣기
@@ -164,14 +164,14 @@ public class WriteCommunityFragment extends Fragment {
         Post newPost = new Post(title, content, category, currentUser.getUid() ,currentUser.getNickname());
 
         // 레벨업 및 경험치 로직 계산
-        // 예시: 글 작성 시 경험치 +10, (현재 레벨 * 100) 경험치 도달 시 레벨업
-        long xpReward = 10;
+        // 예시: 글 작성 시 경험치 +100, (현재 레벨 * 100) 경험치 도달 시 레벨업
+        long xpReward = 1000;
         long currentXp = currentUser.getExperience() + xpReward;
         long currentLevel = currentUser.getLevel();
         long requiredXp = 100; // 레벨 1->2 필요경험치: 100 설정
 
         boolean isLevelup = false;
-        if (currentXp >= requiredXp){
+        while (currentXp >= requiredXp){
             currentLevel++;
             currentXp = currentXp - requiredXp; //레벨업 후 남은 경험치
             isLevelup = true;
@@ -200,7 +200,7 @@ public class WriteCommunityFragment extends Fragment {
             // 성공 시 처리
             if (finalIsLevelUp) {
                 // 레벨업 축하 메시지
-                Toast.makeText(getContext(), "레벨업! 현재 레벨: " + finalIsLevelUp, Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "레벨업! 현재 레벨: " + final_level, Toast.LENGTH_LONG).show();
             }
 
             //currentUser 정보 업데이트해서 넘겨주기

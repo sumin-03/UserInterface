@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/comment_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="작성자 닉네임"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/comment_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/comment_user"
+            app:tint="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/user_level"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/ic_account"
+            app:layout_constraintBottom_toBottomOf="@+id/comment_user"
+            app:layout_constraintStart_toEndOf="@+id/comment_user"
+            app:layout_constraintTop_toTopOf="@+id/comment_user" />
+
+        <TextView
+            android:id="@+id/comment_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="여기에 댓글 내용이 들어감."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/comment_user" />
+
+        <TextView
+            android:id="@+id/comment_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2025.11.28"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/comment_content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="12dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
