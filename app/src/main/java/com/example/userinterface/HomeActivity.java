@@ -74,7 +74,7 @@ public class HomeActivity extends AppCompatActivity {
                     // 액티비티로 떠나므로 현재 탭 선택 상태를 바꾸지 않으려면 false 반환
                     return false;
                 } else if (itemId == R.id.navigation_guide) {
-                    selectedFragment = GuidMenuFragment.newInstance(currentUser);
+                    selectedFragment = GuideMenuFragment.newInstance(currentUser);
                 } else if (itemId == R.id.navigation_recommended_builds) {
                     Log.d("MOVE", "goRecommendBuild");
                     Intent intent = new Intent(HomeActivity.this, RecommendQuotationHomeActivity.class);
