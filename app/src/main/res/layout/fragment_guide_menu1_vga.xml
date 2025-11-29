@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageButton
+                android:id="@+id/menu1_gpu_btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                android:contentDescription="뒤로가기"
+                android:padding="8dp"
+                android:layout_marginStart="-8dp"
+                app:tint="#000000" />
+
+            <ImageView
+                android:id="@+id/iv_guide_icon"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="부품 아이콘"
+                android:src="@drawable/iv_gpu"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_guide_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp"
+                android:text="GPU (그래픽카드)"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_gray_box"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="💡 핵심 역할"
+                    android:textColor="#3F51B5"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_role_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="6dp"
+                    android:text="모니터 화면에 영상 신호를 보내는 장치입니다. 게임, 동영상 편집, 3D 렌더링 등 그래픽 작업의 성능을 결정합니다. 고사양 게임을 즐긴다면 가장 많은 예산을 투자해야 하는 부품입니다."
+                    android:textColor="#424242"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_rounded_gray_box"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="✅ 선택 시 중점 포인트"
+                    android:textColor="#009688"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_point_1_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. 칩셋 성능 등급"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_point_1_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="4dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="모델명 뒷자리 숫자(예: 4060, 4070)가 높을수록 성능이 좋습니다. 사용하는 모니터 해상도(FHD, QHD, 4K)에 맞춰 적절한 등급을 선택해야 합니다."
+                    android:textSize="14sp"
+                    android:textColor="#616161"/>
+
+                <TextView
+                    android:id="@+id/tv_point_2_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. VRAM (비디오 메모리)"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_point_2_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="4dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="고해상도 텍스처를 처리할 때 중요합니다. 최신 고사양 게임이나 AI 작업 용도라면 8GB 이상의 VRAM을 권장합니다."
+                    android:textSize="14sp"
+                    android:textColor="#616161"/>
+
+                <TextView
+                    android:id="@+id/tv_point_3_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. 크기 및 권장 파워"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_point_3_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="제품의 길이(mm)가 내 컴퓨터 케이스에 들어가는지, 그리고 파워서플라이 용량이 그래픽카드를 감당할 수 있는지 확인이 필수입니다."
+                    android:textSize="14sp"
+                    android:textColor="#616161"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

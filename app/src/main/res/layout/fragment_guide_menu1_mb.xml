@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageButton
+                android:id="@+id/menu1_mb_btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                android:contentDescription="뒤로가기"
+                android:padding="8dp"
+                android:layout_marginStart="-8dp"
+                app:tint="#000000" />
+
+            <ImageView
+                android:id="@+id/iv_guide_icon"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="부품 아이콘"
+                android:src="@drawable/iv_mainboard"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_guide_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp"
+                android:text="메인보드 (Mainboard)"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_gray_box"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="💡 핵심 역할"
+                    android:textColor="#3F51B5"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_role_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="6dp"
+                    android:text="컴퓨터의 '몸체'이자 '신경망'입니다. CPU, 그래픽카드, 램 등 모든 부품을 하나로 연결하고 전력을 안정적으로 공급하는 기판입니다. 부품 간의 호환성을 결정짓는 가장 기초적인 부품입니다."
+                    android:textColor="#424242"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_rounded_gray_box"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="✅ 선택 시 중점 포인트"
+                    android:textColor="#009688"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_point_1_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. CPU 소켓과 칩셋"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_point_1_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="4dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="구매하려는 CPU와 소켓 모양(예: LGA1700, AM5)이 정확히 일치해야 합니다. 또한 칩셋 등급(Z, B, H 등)에 따라 기능과 가격이 달라집니다."
+                    android:textSize="14sp"
+                    android:textColor="#616161"/>
+
+                <TextView
+                    android:id="@+id/tv_point_2_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. 폼팩터 (크기)"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_point_2_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="4dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="보드의 크기 규격입니다. ATX(일반), m-ATX(작음), ITX(매우 작음) 등이 있으며, 내 컴퓨터 케이스에 들어가는 크기인지 반드시 확인해야 합니다."
+                    android:textSize="14sp"
+                    android:textColor="#616161"/>
+
+                <TextView
+                    android:id="@+id/tv_point_3_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. 전원부 및 확장성"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_point_3_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="고사양 CPU를 쓴다면 전원부가 튼튼한 제품이 필수입니다. 추가로 M.2 SSD 슬롯 개수나 USB 포트 수가 충분한지 체크하세요."
+                    android:textSize="14sp"
+                    android:textColor="#616161"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

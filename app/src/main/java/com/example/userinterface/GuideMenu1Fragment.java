@@ -2,6 +2,8 @@ package com.example.userinterface;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -60,5 +62,56 @@ public class GuideMenu1Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_guide_menu1, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        view.findViewById(R.id.menu1_btn_back).setOnClickListener(v -> {
+            getParentFragmentManager().popBackStack();
+        });
+
+        view.findViewById(R.id.menu_item_cpu).setOnClickListener(v -> {
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.guide_frame, GuideMenu1CpuFragment.newInstance("param1", "param2"))
+                    .addToBackStack(null)
+                    .commit();
+        });
+        view.findViewById(R.id.menu_item_vga).setOnClickListener(v -> {
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.guide_frame, GuideMenu1VgaFragment.newInstance("param1", "param2"))
+                    .addToBackStack(null)
+                    .commit();
+        });
+        view.findViewById(R.id.menu_item_ram).setOnClickListener(v -> {
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.guide_frame, GuideMenu1RamFragment.newInstance("param1", "param2"))
+                    .addToBackStack(null)
+                    .commit();
+        });
+        view.findViewById(R.id.menu_item_mb).setOnClickListener(v -> {
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.guide_frame, GuideMenu1MbFragment.newInstance("param1", "param2"))
+                    .addToBackStack(null)
+                    .commit();
+        });
+        view.findViewById(R.id.menu_item_power).setOnClickListener(v -> {
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.guide_frame, GuideMenu1PowerFragment.newInstance("param1", "param2"))
+                    .addToBackStack(null)
+                    .commit();
+        });
+        view.findViewById(R.id.menu_item_storage).setOnClickListener(v -> {
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.guide_frame, GuideMenu1StorageFragment.newInstance("param1", "param2"))
+                    .addToBackStack(null)
+                    .commit();
+        });
     }
 }

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageButton
+                android:id="@+id/menu1_ram_btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                android:contentDescription="뒤로가기"
+                android:padding="8dp"
+                android:layout_marginStart="-8dp"
+                app:tint="#000000" />
+
+            <ImageView
+                android:id="@+id/iv_guide_icon"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="부품 아이콘"
+                android:src="@drawable/iv_ram"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_guide_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp"
+                android:text="RAM (메모리)"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_gray_box"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="💡 핵심 역할"
+                    android:textColor="#3F51B5"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_role_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="6dp"
+                    android:text="컴퓨터의 '작업 책상'입니다. CPU가 처리할 데이터를 임시로 저장해두는 공간으로, 용량이 클수록 여러 프로그램을 동시에 켜도 컴퓨터가 느려지지 않습니다."
+                    android:textColor="#424242"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_rounded_gray_box"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="✅ 선택 시 중점 포인트"
+                    android:textColor="#009688"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_point_1_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. 용량 (GB)"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_point_1_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="4dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="가장 중요한 요소입니다. 사무용은 8GB, 게이밍은 16GB가 표준이며, 영상 편집 등 무거운 작업은 32GB 이상을 권장합니다."
+                    android:textSize="14sp"
+                    android:textColor="#616161"/>
+
+                <TextView
+                    android:id="@+id/tv_point_2_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. 규격 및 동작 속도"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_point_2_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="4dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="메인보드가 지원하는 규격(DDR4 또는 DDR5)을 확인해야 합니다. 뒤에 붙는 숫자(예: 3200MHz, 5600MHz)가 높을수록 데이터 처리 속도가 빠릅니다."
+                    android:textSize="14sp"
+                    android:textColor="#616161"/>
+
+                <TextView
+                    android:id="@+id/tv_point_3_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. 듀얼 채널 구성"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_point_3_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="같은 용량이라도 1개(단일)보다 2개(듀얼)로 꽂는 것이 데이터 통로가 넓어져 성능 효율이 훨씬 좋습니다. (예: 16GB 1개 &lt; 8GB 2개)"
+                    android:textSize="14sp"
+                    android:textColor="#616161"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

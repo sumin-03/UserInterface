@@ -76,37 +76,37 @@ public class GuideMenuFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         view.findViewById(R.id.menu_item_1).setOnClickListener(v -> {
-            getParentFragmentManager()
+            getChildFragmentManager()
                     .beginTransaction()
-                    .add(R.id.main, GuideMenu1Fragment.newInstance("param1", "param2"))
+                    .add(R.id.guide_frame, GuideMenu1Fragment.newInstance("param1", "param2"))
                     .addToBackStack(null)
                     .commit();
         });
         view.findViewById(R.id.menu_item_2).setOnClickListener(v -> {
-            getParentFragmentManager()
+            getChildFragmentManager()
                     .beginTransaction()
-                    .add(R.id.main, GuideMenu2Fragment.newInstance("param1", "param2"))
+                    .add(R.id.guide_frame, GuideMenu2Fragment.newInstance("param1", "param2"))
                     .addToBackStack(null)
                     .commit();
         });
         view.findViewById(R.id.menu_item_3).setOnClickListener(v -> {
-            getParentFragmentManager()
+            getChildFragmentManager()
                     .beginTransaction()
-                    .add(R.id.main, GuideMenu3Fragment.newInstance("param1", "param2"))
+                    .add(R.id.guide_frame, GuideMenu3Fragment.newInstance("param1", "param2"))
                     .addToBackStack(null)
                     .commit();
         });
         view.findViewById(R.id.menu_item_4).setOnClickListener(v -> {
-            getParentFragmentManager()
+            getChildFragmentManager()
                     .beginTransaction()
-                    .add(R.id.main, GuideMenu4Fragment.newInstance("param1", "param2"))
+                    .add(R.id.guide_frame, GuideMenu4Fragment.newInstance("param1", "param2"))
                     .addToBackStack(null)
                     .commit();
         });
         view.findViewById(R.id.menu_item_5).setOnClickListener(v -> {
-            getParentFragmentManager()
+            getChildFragmentManager()
                     .beginTransaction()
-                    .add(R.id.main, GuideMenu5Fragment.newInstance("param1", "param2"))
+                    .add(R.id.guide_frame, GuideMenu5Fragment.newInstance("param1", "param2"))
                     .addToBackStack(null)
                     .commit();
         });
