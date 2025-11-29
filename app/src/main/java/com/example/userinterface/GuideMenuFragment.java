@@ -75,6 +75,8 @@ public class GuideMenuFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        view.findViewById(R.id.btn_back).setOnClickListener(v -> {
+        });
         view.findViewById(R.id.menu_item_1).setOnClickListener(v -> {
             getChildFragmentManager()
                     .beginTransaction()

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메인보드 장착 및 연결"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STEP 1. 백패널과 지지대 확인"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp"/>
+
+            <ImageView
+                android:id="@+id/img_mb_step1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#E0E0E0"
+                android:scaleType="centerCrop"
+                android:src="@drawable/view_guide_mainboard1"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. (구형 케이스만) 은색 철판(I/O 쉴드)을 케이스 뒷면에 먼저 끼우세요.\n2. 케이스 바닥에 '금색 육각 나사(스탠드오프)'가 메인보드 구멍 위치에 맞게 박혀있는지 확인하세요."
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="#555555"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STEP 2. 나사로 고정하기"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp"/>
+
+            <ImageView
+                android:id="@+id/img_mb_step2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#E0E0E0"
+                android:scaleType="centerCrop"
+                android:src="@drawable/view_guide_mainboard2"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="메인보드를 케이스에 넣고 나사를 조입니다.\n총 6~9개의 나사를 모두 조여주세요.\n\n*너무 세게 조이면 기판이 손상될 수 있습니다."
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="#555555"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STEP 3. 핵심 전원 연결"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#1976D2"
+                android:layout_marginBottom="12dp"/>
+
+            <ImageView
+                android:id="@+id/img_mb_step3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#E0E0E0"
+                android:scaleType="centerCrop"
+                android:src="@drawable/view_guide_mainboard3"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. [24핀 주전원]: 오른쪽의 가장 굵은 선을 연결하세요.\n2. [CPU 보조전원]: 왼쪽 상단의 8핀(4+4) 구멍에 'CPU'라고 적힌 선을 연결하세요. (가장 많이 까먹는 부분!)"
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="#555555"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#FFF8E1"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="STEP 4. 스위치 선 연결"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#F57C00"/>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_zoom"
+                    app:tint="#F57C00"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_mb_step4"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#E0E0E0"
+                android:scaleType="centerCrop"
+                android:src="@drawable/view_guide_mainboard4"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="케이스에서 나온 얇은 선들(POWER SW, RESET, LED)을 연결합니다.\n\n메인보드 오른쪽 하단 [JFP1] 또는 [PANEL]이라고 적힌 곳을 잘 보세요. 기판에 적힌 글씨대로 꽂아야 합니다."
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="#555555"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="*LED 선은 +/- 극성이 있으니 주의하세요!"
+                android:textSize="13sp"
+                android:textColor="#D32F2F"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SSD (M.2) 장착 방법"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E3F2FD"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_dialog_info"
+            app:tint="#1976D2"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TIP: M.2 나사는 매우 작습니다.\n잃어버리지 않도록 자석 드라이버 사용을 권장합니다."
+            android:textColor="#1976D2"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STEP 1. 슬롯 확인 및 나사 풀기"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp"/>
+
+            <ImageView
+                android:id="@+id/img_ssd_step1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#E0E0E0"
+                android:scaleType="centerCrop"
+                android:src="@drawable/view_guide_ssd1"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="메인보드에서 'M.2'라고 적힌 슬롯을 찾으세요.\n\n1. 방열판이 있다면 나사를 풀어 제거합니다.\n2. 슬롯 끝에 고정 나사가 박혀있다면 미리 풀어두세요."
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="#555555"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STEP 2. 대각선으로 끼우기"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp"/>
+
+            <ImageView
+                android:id="@+id/img_ssd_step2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#E0E0E0"
+                android:scaleType="centerCrop"
+                android:src="@drawable/view_guide_ssd2"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SSD의 홈과 슬롯의 돌기를 맞춥니다.\n약 30도 각도로 비스듬히 세워서 밀어 넣으세요.\n\n*제대로 들어가면 SSD 뒷부분이 공중으로 살짝 떠오릅니다."
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="#555555"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STEP 3. 눌러서 고정하기"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp"/>
+
+            <ImageView
+                android:id="@+id/img_ssd_step3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#E0E0E0"
+                android:scaleType="centerCrop"
+                android:src="@drawable/view_guide_ssd3"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="떠있는 SSD 뒷부분을 손가락으로 눌러 메인보드에 밀착시킵니다.\n그 상태에서 아까 풀어둔 나사를 조이거나, 고정 레버를 돌려 마무리합니다.\n\n(방열판이 있었다면 지금 다시 덮어주세요.)"
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="#555555"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="※ 네모난 2.5인치 SSD인가요?\n이 경우 파워 서플라이의 전원 선과 별도의 SATA 케이블을 연결해야 합니다."
+        android:textSize="13sp"
+        android:textColor="#757575"
+        android:gravity="center"
+        android:padding="8dp"/>
+
+</LinearLayout>
