@@ -1,5 +1,6 @@
 package com.example.userinterface;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.userinterface.databinding.FragmentMypageBinding;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -20,6 +22,9 @@ import java.util.Locale;
 public class MyPageFragment extends Fragment {
     private User currentUser;
     private FragmentMypageBinding binding;
+    private FirebaseFirestore db;
+    private MyPc myPc;
+
     private String TAG = "MYPAGE";
     public static MyPageFragment newInstance(User user) {
         MyPageFragment fragment = new MyPageFragment();
@@ -57,6 +62,36 @@ public class MyPageFragment extends Fragment {
 
                 //User 프로필 재설정
                 displayUserProfile();
+            }
+        });
+        MyPc.listen(currentUser.getUid(), new MyPc.OnMyPcLoadedListener() {
+            @Override
+            public void onLoaded(@Nullable MyPc pc) {
+                if (pc == null) return;
+
+                myPc = pc;
+
+                binding.myCpu.setText("CPU : " + myPc.getCpu());
+                binding.myGpu.setText("GPU : " + myPc.getGpu());
+                binding.myMainboard.setText("메인보드 : " + myPc.getMainboard());
+                binding.myRam.setText("RAM : " + myPc.getRam());
+                binding.myPower.setText("파워 : " + myPc.getPower());
+                binding.myCase.setText("케이스 : " + myPc.getBox());
+                binding.myCooler.setText("쿨러 : " + myPc.getCooler());
+                binding.myStorage.setText("저장장치 : " + myPc.getStorage());
+            }
+
+            @Override
+            public void onError(Exception e) {
+                Log.e(TAG, "실시간 MyPc 오류", e);
+            }
+        });
+        binding.gotoMyPc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), MyPcActivity.class);
+                intent.putExtra("USER_PROFILE", currentUser);
+                startActivity(intent);
             }
         });
     }

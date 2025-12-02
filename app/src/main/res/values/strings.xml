@@ -21,4 +21,7 @@
     <string name="login_failed">"Login failed"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="board_tip">
+        보드 크기 및 가격\nATX > M-ATX\n\n더 큰 보드를 사용하면\n추후 부품 추가 및\n컴퓨터 조립 시 유리합니다
+    </string>
 </resources>
