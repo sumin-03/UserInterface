@@ -102,6 +102,19 @@ public class CommunityMainFragment extends Fragment {
                         .commit();
             }
         });
+
+        //검색 버튼 클릭 리스너
+        binding.btnSearchPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getContext(), CommunitySearchActivity.class);
+                if(currentUser != null){
+                    intent.putExtra("USER_PROFILE", currentUser);
+                }
+                startActivity(intent);
+            }
+        });
     }
 
     private void setupRecyclerView(){

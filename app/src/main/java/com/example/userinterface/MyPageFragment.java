@@ -1,5 +1,7 @@
 package com.example.userinterface;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +26,7 @@ public class MyPageFragment extends Fragment {
     private FragmentMypageBinding binding;
     private FirebaseFirestore db;
     private MyPc myPc;
+    private AlertDialog dialog;
 
     private String TAG = "MYPAGE";
     public static MyPageFragment newInstance(User user) {
@@ -92,6 +95,26 @@ public class MyPageFragment extends Fragment {
                 Intent intent = new Intent(getContext(), MyPcActivity.class);
                 intent.putExtra("USER_PROFILE", currentUser);
                 startActivity(intent);
+            }
+        });
+
+        binding.myPageLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog = new AlertDialog.Builder(getContext())
+                        .setTitle("로그아웃")
+                        .setMessage("정말 로그아웃하시겠습니까?")
+                        .setPositiveButton("예", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = new Intent(getContext(), LoginActivity.class);
+                                startActivity(intent);
+                            }
+                        })
+                        .setNegativeButton("아니요", null)
+                        .create();
+
+                dialog.show();
             }
         });
     }

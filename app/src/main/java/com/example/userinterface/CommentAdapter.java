@@ -42,7 +42,8 @@ public class CommentAdapter extends FirestoreRecyclerAdapter<Comment, CommentAda
     //ViewHolder class
     public static class CommentViewHolder extends RecyclerView.ViewHolder{
         TextView userName, commentContent, commentDate;
-        ImageView userLevel, commentDelete;
+        TextView userLevel;
+        ImageView commentDelete;
 
 
         public CommentViewHolder(@NonNull View itemView) {
@@ -69,10 +70,9 @@ public class CommentAdapter extends FirestoreRecyclerAdapter<Comment, CommentAda
         viewHolder.userName.setText(model.getUserName());
 
 
-        // 레벨 아이콘 처리 (int userLevel 활용)
-        // 현재는 기본 아이콘(ic_account)을 쓰지만, 나중에 레벨별 이미지가 생기면 여기서 분기처리하면 됩니다.
-        // 예: if(model.getUserLevel() > 10) holder.userLevel.setImageResource(R.drawable.lv_high);
-        viewHolder.userLevel.setImageResource(R.drawable.ic_account);
+        // 댓글에 저장된(작성 당시) 레벨로 즉시 표시
+        setLevelEmoji(viewHolder.userLevel, model.getUserLevel());
+
 
         // Date 타입을 String으로
         if (model.getTimestamp() != null) {
@@ -103,5 +103,19 @@ public class CommentAdapter extends FirestoreRecyclerAdapter<Comment, CommentAda
                 }
             });
         }
+    }
+
+    private void setLevelEmoji(TextView textView, int level) {
+        String levelEmoji;
+        if (level >= 30) {
+            levelEmoji = "🍗"; // 30레벨 이상
+        } else if (level >= 20) {
+            levelEmoji = "🐓"; // 20 ~ 29레벨
+        } else if (level >= 10) {
+            levelEmoji = "🐥"; // 10 ~ 19레벨
+        } else {
+            levelEmoji = "🥚"; // 1 ~ 9레벨 (그 외)
+        }
+        textView.setText(levelEmoji);
     }
 }
