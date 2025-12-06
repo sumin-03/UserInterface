@@ -21,6 +21,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 
 import java.util.HashMap;
@@ -41,6 +42,10 @@ public class PostDetailFragment extends Fragment {
 
     private boolean isBookmarked = false; //현재 북마크 상태
     private boolean isBookmarkProcess = false; //중복 클릭 방지용
+
+    // [추가] 로딩 상태 확인용 변수
+    private boolean isPostLoaded = false;
+    private boolean isCommentsLoaded = false;
 
     public static PostDetailFragment newInstance(String postId, User user) {
         PostDetailFragment fragment = new PostDetailFragment();
@@ -73,8 +78,15 @@ public class PostDetailFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        
-        
+
+        // 처음에는 로딩바 보이고, 내용은 숨김
+        binding.progressBar.setVisibility(View.VISIBLE);
+        binding.nestedScrollView.setVisibility(View.GONE);
+
+        // 로딩 상태 초기화
+        isPostLoaded = false;
+        isCommentsLoaded = false;
+
         //comment내용 불러오기 + 삭제
         setupCommentPlusDelete();
         //post내용 불러오기
@@ -100,6 +112,13 @@ public class PostDetailFragment extends Fragment {
         setupBookmarkButton();
     }
 
+    private void checkLoadingState() {
+        // 게시글과 댓글이 모두 로드되었을 때만 화면을 보여줌
+        if (isPostLoaded && isCommentsLoaded) {
+            binding.progressBar.setVisibility(View.GONE);
+            binding.nestedScrollView.setVisibility(View.VISIBLE);
+        }
+    }
     private void setupCommentPlusDelete(){
         if(postId == null) return;
         // 쿼리 만들기: 해당 게시글(postId)의 "comments" 서브컬렉션을 날짜순으로 가져옴
@@ -112,7 +131,24 @@ public class PostDetailFragment extends Fragment {
                 .build();
 
         // 어댑터 생성 및 연결
-        commentAdapter = new CommentAdapter(options);
+        commentAdapter = new CommentAdapter(options) {
+            @Override
+            public void onDataChanged() {
+                super.onDataChanged();
+                // 데이터가 로드되면(변경되면) 로딩 완료 처리
+                if (!isCommentsLoaded) {
+                    isCommentsLoaded = true;
+                    checkLoadingState(); // 상태 체크
+                }
+            }
+            @Override
+            public void onError(@NonNull FirebaseFirestoreException e) {
+                super.onError(e);
+                // 에러가 나더라도 무한 로딩에 걸리지 않게 완료 처리 해버림
+                isCommentsLoaded = true;
+                checkLoadingState();
+            }
+        };
         binding.postCommentRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.postCommentRecycler.setAdapter(commentAdapter);
 
@@ -202,12 +238,6 @@ public class PostDetailFragment extends Fragment {
     }
     private void setupPostDetail(){
         if(postId == null) return;
-        
-        //처음 시작시 로딩 중
-        binding.progressBar.setVisibility(View.VISIBLE);
-        binding.nestedScrollView.setVisibility(View.GONE);
-
-
         db.collection("posts").document(postId)
                 .get()
                 .addOnSuccessListener(documentSnapshot -> {
@@ -256,14 +286,14 @@ public class PostDetailFragment extends Fragment {
                                         binding.postDeleteBtn.setVisibility(View.GONE);
                                     }
 
-                                    //이제 글이 보이기 시작함 ㅇㅇ
-                                    binding.progressBar.setVisibility(View.GONE);
-                                    binding.nestedScrollView.setVisibility(View.VISIBLE);
+                                    // [수정] 로딩바 끄는 코드 삭제 -> 상태 변경 함수 호출
+                                    isPostLoaded = true;
+                                    checkLoadingState();
                                 }
                             } else{
-                                // === [추가됨] 게시글이 삭제된 경우 ===
-                                binding.progressBar.setVisibility(View.GONE);
+                                isPostLoaded = true; // 로딩은 끝난 것임
                                 // 북마크 상태인지 확인 후 처리
+                                checkLoadingState();
                                 checkIfBookmarkedAndPromptDelete();
                             }
                 }).addOnFailureListener(e -> {
