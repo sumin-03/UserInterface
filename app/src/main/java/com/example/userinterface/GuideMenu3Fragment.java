@@ -2,11 +2,16 @@ package com.example.userinterface;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+
+import com.google.android.material.tabs.TabLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +28,7 @@ public class GuideMenu3Fragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    FrameLayout container;
 
     public GuideMenu3Fragment() {
         // Required empty public constructor
@@ -60,5 +66,56 @@ public class GuideMenu3Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_guide_menu3, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        view.findViewById(R.id.menu_btn_back).setOnClickListener(v -> {
+            getParentFragmentManager().popBackStack();
+        });
+
+        TabLayout tabLayout = view.findViewById(R.id.tab_layout);
+        container = view.findViewById(R.id.container_guide_content); // XML에 추가한 FrameLayout ID
+
+        // 1. 초기 화면 설정 (0번 탭 내용)
+        loadLayout(0);
+
+        // 2. 탭 리스너
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                // 탭을 누르면 해당 인덱스의 레이아웃을 불러옴
+                loadLayout(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {}
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {}
+        });
+    }
+
+    // 레이아웃 교체 함수
+    private void loadLayout(int tabIndex) {
+        // 1. 기존에 떠있던 뷰들을 싹 지운다.
+        container.removeAllViews();
+
+        // 2. 탭 번호에 따라 보여줄 XML 레이아웃 ID를 고른다.
+        int layoutResId = 0;
+        switch (tabIndex) {
+            case 0: layoutResId = R.layout.view_guide_compatibility0; break; // 별도로 만든 XML 파일들
+            case 1: layoutResId = R.layout.view_guide_compatibility1; break;
+            case 2: layoutResId = R.layout.view_guide_compatibility2; break;
+            case 3: layoutResId = R.layout.view_guide_compatibility3; break;
+            case 4: layoutResId = R.layout.view_guide_compatibility4; break;
+        }
+
+        // 3. 선택된 레이아웃이 있다면 인플레이터로 뷰를 생성해서 컨테이너에 붙인다.
+        if (layoutResId != 0) {
+            // attachToRoot를 true로 설정하면 자동으로 container에 addView가 됩니다.
+            getLayoutInflater().inflate(layoutResId, container, true);
+        }
     }
 }
