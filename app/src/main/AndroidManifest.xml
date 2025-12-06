@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,6 +14,85 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UserInterface">
         <activity
+            android:name=".CheckCompatibility"
+            android:exported="false" />
+        <activity
+            android:name=".BoardSizeDialog"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DayNight.Dialog" />
+        <activity
+            android:name=".MyPcActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CaseListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CaseRecommend"
+            android:exported="false" />
+        <activity
+            android:name=".CaseResult"
+            android:exported="false" />
+        <activity
+            android:name=".CoolerListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CoolerRecommend"
+            android:exported="false" />
+        <activity
+            android:name=".CoolerResult"
+            android:exported="false" />
+        <activity
+            android:name=".CpuListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CpuRecommend"
+            android:exported="false" />
+        <activity
+            android:name=".CpuResult"
+            android:exported="false" />
+        <activity
+            android:name=".GpuListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GpuRecommend"
+            android:exported="false" />
+        <activity
+            android:name=".GpuResult"
+            android:exported="false" />
+        <activity
+            android:name=".MainboardListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainboardRecommend"
+            android:exported="false" />
+        <activity
+            android:name=".MainboardResult"
+            android:exported="false" />
+        <activity
+            android:name=".PowerListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PowerRecommend"
+            android:exported="false" />
+        <activity
+            android:name=".PowerResult"
+            android:exported="false" />
+        <activity
+            android:name=".RamListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RamRecommend"
+            android:exported="false" />
+        <activity
+            android:name=".RamResult"
+            android:exported="false" />
+        <activity
+            android:name=".StorageRecommend"
+            android:exported="false" />
+        <activity
+            android:name=".RecommendMain"
+            android:exported="false" />
+        <activity
             android:name=".RecommendQuotationByappsActivity"
             android:exported="false" />
         <activity
@@ -20,7 +100,7 @@
             android:exported="false" />
         <activity
             android:name=".RecommendQuotationHomeActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".PartsSearchSSDspec"
             android:exported="false" />

@@ -215,6 +215,12 @@
                         android:text="케이스 : "
                         android:textSize="12sp" />
                     <TextView
+                        android:id="@+id/my_cooler"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="쿨러 : "
+                        android:textSize="12sp" />
+                    <TextView
                         android:id="@+id/my_storage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -400,7 +406,7 @@
                             android:layout_height="20dp"
                             android:layout_marginRight="8dp"
                             android:src="@android:drawable/stat_notify_chat"
-                            android:tint="@color/black"/>
+                            app:tint="@color/black" />
 
                         <TextView
                             android:layout_width="wrap_content"

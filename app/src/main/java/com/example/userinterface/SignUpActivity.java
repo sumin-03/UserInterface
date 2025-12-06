@@ -138,6 +138,16 @@ public class SignUpActivity extends AppCompatActivity {
 
                                                             if (user != null) {
                                                                 String uid = user.getUid();
+                                                                MyPc myPc = new MyPc("나만의 cpu", "나만의 gpu", "나만의 메인보드", "나만의 ram", "나만의 파워", "나만의 케이스", "나만의 쿨러", "나만의 저장소", uid);
+                                                                db.collection("mypcs")
+                                                                        .document(uid)
+                                                                        .set(myPc)
+                                                                        .addOnSuccessListener(unused -> {
+                                                                            Log.d(TAG, "mypcs created successfully");
+                                                                        })
+                                                                        .addOnFailureListener(e -> {
+                                                                            Log.e(TAG, "mypcs create failed", e);
+                                                                        });
 
                                                                 User newUser = new User(uid, nickname, email);
                                                                 //유저 정보 저장
