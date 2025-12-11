@@ -65,6 +65,13 @@ public class RecommendQuotationBypartsRecFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        view.findViewById(R.id.btnCheckResult).setOnClickListener(v -> {
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .remove(RecommendQuotationBypartsRecFragment.this)
+                    .commit();
+        });
+
         // [디버깅 1] 프래그먼트가 생성되었는지 확인
         Log.e("DEBUG_ENTRY", ">>> RecommendQuotationBypartsRecFragment: onViewCreated 진입 성공! <<<");
         Toast.makeText(getContext(), "Rec 프래그먼트 진입", Toast.LENGTH_SHORT).show();
@@ -97,9 +104,6 @@ public class RecommendQuotationBypartsRecFragment extends Fragment {
         }
     }
 
-    // =========================================================================================
-    //  1. 사용자 스펙 계산 (로그 추가)
-    // =========================================================================================
     private void calculateUserSpecs(String cpuName, String gpuName, String ramString) {
         Log.d("DEBUG_REC", "1. 사용자 스펙 계산 시작: " + cpuName + " / " + gpuName);
 
@@ -128,9 +132,6 @@ public class RecommendQuotationBypartsRecFragment extends Fragment {
         });
     }
 
-    // =========================================================================================
-    //  2. 게임 목록 조회 (핵심 수정: 에러 처리 및 로그 추가)
-    // =========================================================================================
     private void findPlayableGames() {
         Log.d("DEBUG_REC", "3. requirements_rec 컬렉션 조회 시작");
 

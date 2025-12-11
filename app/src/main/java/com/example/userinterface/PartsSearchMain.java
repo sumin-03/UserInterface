@@ -42,6 +42,7 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
     private List<ItemModel> hddNameList = new ArrayList<>();
     private List<ItemModel> coolerNameList = new ArrayList<>();
     private List<ItemModel> caseNameList = new ArrayList<>();
+    private User currentUser;
 
     private int currentTabPosition;
 
@@ -58,6 +59,7 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
         binding = ActivityPartsSearchMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        currentUser = getIntent().getSerializableExtra("USER_PROFILE", User.class);
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
@@ -118,10 +120,11 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
     private void setupNavigationListeners() { //밑에 내비게이션 바 리스너
         binding.bottomNavigation.setOnItemSelectedListener(Item -> {
             int itemId = Item.getItemId();
+            Fragment selectedFragment = null;
             User user = getIntent().getSerializableExtra("USER_PROFILE", User.class);
 
             if(itemId == R.id.navigation_home){
-                Log.d("MOVE", "MoveHome");
+                Log.d("KSM", "MoveHome");
                 Intent intent = new Intent(PartsSearchMain.this, HomeActivity.class);
                 intent.putExtra("USER_PROFILE", user);
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
@@ -129,48 +132,33 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
                 startActivity(intent, options.toBundle());
                 return true;
             }
-
             else if (itemId == R.id.navigation_search) {
-                Log.d("STAY", "PartsSearchMain");
+                Log.d("KSM", "STAY");
                 return true;
             }
-
             else if (itemId == R.id.navigation_guide) {
                 Log.d("MOVE", "MoveGuide");
-                Toast.makeText(this, "가이드로 이동!", Toast.LENGTH_SHORT).show(); //이거 지우기
-                // TODO: 가이드 액티비티로 이동(User정보 포함해서 넘겨주기)
-                // Intent intent = new Intent(this, GuideActivity.class);
-                // startActivity(intent);
-                return true;
+                selectedFragment = GuideMenuFragment.newInstance(currentUser);
             }
-
             else if (itemId == R.id.navigation_recommended_builds) {
-                Log.d("MOVE", "MoveRecommend");
-                Toast.makeText(this, "견적 추천으로 이동!!", Toast.LENGTH_SHORT).show(); //이거 지우기
-                // TODO: 견적 추천 액티비티로 이동(User정보 포함해서 넘겨주기)
-                // Intent intent = new Intent(this, RecommendActivity.class);
-                // startActivity(intent);
+                Log.d("MOVE", "goRecommendBuild");
+                Intent intent = new Intent(PartsSearchMain.this, RecommendQuotationHomeActivity.class);
+                intent.putExtra("USER_PROFILE", currentUser); // 유저 정보 넘겨주기
+                startActivity(intent);
                 return true;
             }
-
             else if (itemId == R.id.navigation_community) {
-                Log.d("MOVE", "MoveCommunity");
-                Toast.makeText(this, "커뮤니티", Toast.LENGTH_SHORT).show(); //이거 지우기
-                // TODO: 커뮤니티 액티비티로 이동(User정보 포함해서 넘겨주기)
-                // Intent intent = new Intent(this, CommunityActivity.class);
-                // startActivity(intent);
-                return true;
+                Log.d("MOVE", "CommunityMainFragment");
+                selectedFragment = CommunityMainFragment.newInstance(currentUser);
             }
-
             else if (itemId == R.id.navigation_profile) {
                 Log.d("MOVE", "MoveProfile");
-                Toast.makeText(this, "내 프로필로 이동!", Toast.LENGTH_SHORT).show(); //이거 지우기
-                // TODO: 내 프로필로 액티비티로 이동(User정보 포함해서 넘겨주기)
-                // Intent intent = new Intent(this, MyPCActivity.class);
-                // startActivity(intent);
+                selectedFragment = MyPageFragment.newInstance(currentUser);
+            }
+            if (selectedFragment != null) { // null 이 아니면 탭 선택 변경
+                loadFragment(selectedFragment);
                 return true;
             }
-
             return false;
         });
     }
@@ -178,55 +166,58 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
         binding.addPartButton.setOnClickListener(v -> {
             Fragment fragmentToAdd;
             String backStackName;
-
-            switch(currentTabPosition) {
-                case 0:
-                    fragmentToAdd = new AddCpuFragment();
-                    backStackName = "add_cpu";
-                    break;
-                case 1:
-                    fragmentToAdd = new AddGpuFragment(); // 나중에 만들 프래그먼트
-                    backStackName = "add_gpu";
-                    break;
-                case 2:
-                    fragmentToAdd = new AddMainboardFragment(); // 나중에 만들 프래그먼트
-                    backStackName = "add_mainboard";
-                    break;
-                case 3:
-                    fragmentToAdd = new AddRamFragment(); // 나중에 만들 프래그먼트
-                    backStackName = "add_ram";
-                    break;
-                case 4:
-                    fragmentToAdd = new AddPowerFragment(); // 나중에 만들 프래그먼트
-                    backStackName = "add_power";
-                    break;
-                case 5:
-                    fragmentToAdd = new AddSsdFragment(); // 나중에 만들 프래그먼트
-                    backStackName = "add_ssd";
-                    break;
-                case 6:
-                    fragmentToAdd = new AddHddFragment(); // 나중에 만들 프래그먼트
-                    backStackName = "add_hdd";
-                    break;
-                case 7:
-                    fragmentToAdd = new AddCoolerFragment(); // 나중에 만들 프래그먼트
-                    backStackName = "add_cooler";
-                    break;
-                case 8:
-                    fragmentToAdd = new AddCaseFragment(); // 나중에 만들 프래그먼트
-                    backStackName = "add_case";
-                    break;
-                default:
-                    Toast.makeText(this, "이 부품의 추가 기능은 아직 준비되지 않았습니다.", Toast.LENGTH_SHORT).show();
-                    return; // 프래그먼트를 열지 않고 종료
+            long userLevel = currentUser.getLevel();
+            Log.d("KSM", "UserLevel is over 10");
+            if(userLevel >= 10) {
+                switch (currentTabPosition) {
+                    case 0:
+                        fragmentToAdd = new AddCpuFragment();
+                        backStackName = "add_cpu";
+                        break;
+                    case 1:
+                        fragmentToAdd = new AddGpuFragment(); // 나중에 만들 프래그먼트
+                        backStackName = "add_gpu";
+                        break;
+                    case 2:
+                        fragmentToAdd = new AddMainboardFragment(); // 나중에 만들 프래그먼트
+                        backStackName = "add_mainboard";
+                        break;
+                    case 3:
+                        fragmentToAdd = new AddRamFragment(); // 나중에 만들 프래그먼트
+                        backStackName = "add_ram";
+                        break;
+                    case 4:
+                        fragmentToAdd = new AddPowerFragment(); // 나중에 만들 프래그먼트
+                        backStackName = "add_power";
+                        break;
+                    case 5:
+                        fragmentToAdd = new AddSsdFragment(); // 나중에 만들 프래그먼트
+                        backStackName = "add_ssd";
+                        break;
+                    case 6:
+                        fragmentToAdd = new AddHddFragment(); // 나중에 만들 프래그먼트
+                        backStackName = "add_hdd";
+                        break;
+                    case 7:
+                        fragmentToAdd = new AddCoolerFragment(); // 나중에 만들 프래그먼트
+                        backStackName = "add_cooler";
+                        break;
+                    case 8:
+                        fragmentToAdd = new AddCaseFragment(); // 나중에 만들 프래그먼트
+                        backStackName = "add_case";
+                        break;
+                    default:
+                        Toast.makeText(this, "이 부품의 추가 기능은 아직 준비되지 않았습니다.", Toast.LENGTH_SHORT).show();
+                        return; // 프래그먼트를 열지 않고 종료
+                }
+                // 트랜잭션 실행
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main, fragmentToAdd) // replace 사용
+                        .addToBackStack(backStackName)     // back stack에 추가
+                        .commit();
             }
-
-            // 트랜잭션 실행
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.main, fragmentToAdd) // replace 사용
-                    .addToBackStack(backStackName)     // back stack에 추가
-                    .commit();
+            else Toast.makeText(this, "레벨 10부터 가능합니다.", Toast.LENGTH_SHORT).show();
         });
     }
 
@@ -693,5 +684,12 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
     public void onResume() {
         super.onResume();
         binding.bottomNavigation.setSelectedItemId(R.id.navigation_search);
+    }
+
+    private void loadFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
     }
 }
