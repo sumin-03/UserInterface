@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.Objects;
 
 /**
@@ -27,6 +29,8 @@ public class GuideMenuFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private User currentUser;
+    private FirebaseFirestore db;
 
     public GuideMenuFragment() {
         // Required empty public constructor
@@ -61,9 +65,11 @@ public class GuideMenuFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        db = FirebaseFirestore.getInstance();
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            currentUser = getArguments().getSerializable("USER_PROFILE", User.class);
         }
     }
 
@@ -77,12 +83,12 @@ public class GuideMenuFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.btn_back).setOnClickListener(v -> {
+//        view.findViewById(R.id.btn_back).setOnClickListener(v -> {
 //            getActivity().getSupportFragmentManager()
 //                    .beginTransaction()
-//                    .replace(R.id.fragment_container, HomeFragment)
+//                    .remove(GuideMenuFragment.this)
 //                    .commit();
-        });
+//        });
         view.findViewById(R.id.menu_item_1).setOnClickListener(v -> {
             getChildFragmentManager()
                     .beginTransaction()

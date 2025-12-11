@@ -61,6 +61,14 @@ public class RecommendQuotationBypartsMinFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        view.findViewById(R.id.btnCheckResult).setOnClickListener(v -> {
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .remove(RecommendQuotationBypartsMinFragment.this)
+                    .commit();
+        });
+
         db = FirebaseFirestore.getInstance();
 
         // ◀️ 리사이클러뷰 기본 설정 (LayoutManager만 먼저 설정)
