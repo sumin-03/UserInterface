@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.userinterface.databinding.ActivityMainboardListBinding;
 import com.example.userinterface.databinding.ListCardBinding;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

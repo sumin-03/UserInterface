@@ -37,6 +37,7 @@ public class RecommendQuotationHomeActivity extends AppCompatActivity {
 
         binding.buttonApps.setOnClickListener(v -> {
             Intent intent = new Intent(RecommendQuotationHomeActivity.this, RecommendQuotationByappsActivity.class);
+            intent.putExtra("USER_PROFILE", getIntent().getSerializableExtra("USER_PROFILE", User.class));
             startActivity(intent);
         });
 

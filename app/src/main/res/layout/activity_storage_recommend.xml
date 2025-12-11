@@ -241,7 +241,7 @@
         android:id="@+id/btn_goto_first"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="추천화면으로 돌아가기"
+        android:text="이전화면으로 돌아가기"
         android:textSize="17sp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
