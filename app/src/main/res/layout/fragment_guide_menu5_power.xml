@@ -83,7 +83,7 @@
                         android:scaleType="fitCenter"
                         android:layout_marginTop="10dp"
                         android:background="#E0E0E0"
-                        tools:src="@tools:sample/backgrounds/scenic"
+                        android:src="@drawable/power_io"
                         android:contentDescription="파워 스위치 예시 이미지"/>
                 </LinearLayout>
 
@@ -117,7 +117,7 @@
                         android:scaleType="fitCenter"
                         android:layout_marginTop="10dp"
                         android:background="#E0E0E0"
-                        tools:src="@tools:sample/backgrounds/scenic"
+                        android:src="@drawable/psu_jfp1"
                         android:contentDescription="전면 패널 커넥터 연결 예시"/>
                 </LinearLayout>
 

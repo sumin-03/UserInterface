@@ -80,7 +80,7 @@ public class GuideMenuFragment extends Fragment {
         view.findViewById(R.id.btn_back).setOnClickListener(v -> {
 //            getActivity().getSupportFragmentManager()
 //                    .beginTransaction()
-//                    .replace()
+//                    .replace(R.id.fragment_container, HomeFragment)
 //                    .commit();
         });
         view.findViewById(R.id.menu_item_1).setOnClickListener(v -> {

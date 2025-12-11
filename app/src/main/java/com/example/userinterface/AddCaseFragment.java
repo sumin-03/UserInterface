@@ -17,8 +17,6 @@ import com.example.userinterface.databinding.FragmentAddCaseBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class AddCaseFragment extends Fragment {
-
-    // 뷰 바인딩 및 Firestore 변수
     private FragmentAddCaseBinding binding;
     private FirebaseFirestore db;
 

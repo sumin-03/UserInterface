@@ -94,7 +94,7 @@
                         android:scaleType="fitCenter"
                         android:layout_marginTop="12dp"
                         android:background="#E0E0E0"
-                        tools:src="@tools:sample/backgrounds/scenic"
+                        android:src="@drawable/monitor_cable"
                         android:contentDescription="그래픽카드 포트 위치 설명 이미지"/>
                 </LinearLayout>
 
@@ -159,7 +159,7 @@
                         android:scaleType="fitCenter"
                         android:layout_marginTop="8dp"
                         android:background="#E0E0E0"
-                        tools:src="@tools:sample/backgrounds/scenic"
+                        android:src="@drawable/vga_sub_power"
                         android:contentDescription="그래픽카드 보조전원 예시"/>
                 </LinearLayout>
 

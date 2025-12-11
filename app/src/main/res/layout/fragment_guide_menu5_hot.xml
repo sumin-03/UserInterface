@@ -101,7 +101,7 @@
                         android:scaleType="fitCenter"
                         android:layout_marginTop="12dp"
                         android:background="#E0E0E0"
-                        tools:src="@tools:sample/backgrounds/scenic"
+                        android:src="@drawable/cooler_wrapping"
                         android:contentDescription="쿨러 보호 비닐 제거 예시"/>
                 </LinearLayout>
 
@@ -135,7 +135,7 @@
                         android:scaleType="fitCenter"
                         android:layout_marginTop="8dp"
                         android:background="#E0E0E0"
-                        tools:src="@tools:sample/backgrounds/scenic"
+                        android:src="@drawable/case_cooler_direction"
                         android:contentDescription="팬 흡기 배기 방향 예시"/>
                 </LinearLayout>
 

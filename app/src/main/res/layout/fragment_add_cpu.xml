@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="?android:attr/colorBackground"
-    android:clickable="true" >
-
-    <ImageView
-        android:id="@+id/iv_cpu_image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:contentDescription="CPU 이미지"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@android:drawable/ic_menu_camera" />
+    android:layout_marginBottom="100dp"
+    android:clickable="true">
 
     <TextView
         android:id="@+id/title"
@@ -28,9 +19,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_cpu_image" />
-
-
+        app:layout_constraintTop_toTopOf="parent" />
     <View
         android:id="@+id/divider"
         android:layout_width="0dp"
@@ -41,341 +30,357 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
-    <TextView
-        android:id="@+id/label_cpu_model_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:text="모델명"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/value_cpu_model_name"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="end"
-        android:hint="입력하세요"
-        android:textSize="17dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/label_cpu_model_name"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/addPartButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_cpu_model_name" />
-
-    <TextView
-        android:id="@+id/label_manufacturer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:text="제조사"
-        android:textStyle="bold"
-        android:textSize="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_cpu_model_name" />
+        app:layout_constraintTop_toBottomOf="@id/divider">
 
-    <TextView
-        android:id="@+id/label_socket"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:text="소켓"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_manufacturer" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/label_cores"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:text="코어"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_socket" />
+            <TextView
+                android:id="@+id/label_cpu_model_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="모델명"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/label_threads"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:text="스레드"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_cores" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/value_cpu_model_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:gravity="end"
+                android:hint="입력하세요"
+                android:textSize="17dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_cpu_model_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/label_cpu_model_name" />
 
-    <TextView
-        android:id="@+id/label_memory_version"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:text="메모리 버전"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_threads" />
+            <TextView
+                android:id="@+id/label_manufacturer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="제조사"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_cpu_model_name" />
 
-    <TextView
-        android:id="@+id/label_memory_clock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:text="메모리 클럭"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_memory_version" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/value_manufacturer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:gravity="end"
+                android:hint="입력하세요"
+                android:textSize="17dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_manufacturer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/label_manufacturer" />
 
+            <TextView
+                android:id="@+id/label_socket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="소켓"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_manufacturer" />
 
-    <TextView
-        android:id="@+id/label_base_clock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:text="기본 클럭"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_memory_clock" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/value_socket"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:gravity="end"
+                android:hint="입력하세요"
+                android:textSize="17dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_socket"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/label_socket" />
 
-    <TextView
-        android:id="@+id/label_boost_clock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:text="최대 부스트 클럭"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_base_clock" />
+            <TextView
+                android:id="@+id/label_cores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="코어"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_socket" />
 
-    <TextView
-        android:id="@+id/label_L2cache"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:text="L2 캐시"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_boost_clock" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/value_cores"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:gravity="end"
+                android:hint="입력하세요"
+                android:textSize="17dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_cores"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/label_cores" />
 
-    <TextView
-        android:id="@+id/label_L3cache"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:text="L3 캐시"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_L2cache" />
+            <TextView
+                android:id="@+id/label_threads"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="스레드"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_cores" />
 
-    <TextView
-        android:id="@+id/label_graphics"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:text="내장 그래픽"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_L3cache" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/value_threads"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:gravity="end"
+                android:hint="입력하세요"
+                android:textSize="17dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_threads"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/label_threads" />
 
-    <TextView
-        android:id="@+id/label_tdp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:text="TDP"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_graphics" />
+            <TextView
+                android:id="@+id/label_memory_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="메모리 버전"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_threads" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/value_manufacturer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="end"
-        android:hint="입력하세요"
-        android:textSize="17dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/label_manufacturer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_manufacturer" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/value_memory_version"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:gravity="end"
+                android:hint="입력하세요"
+                android:textSize="17dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_memory_version"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/label_memory_version" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/value_socket"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="end"
-        android:hint="입력하세요"
-        android:textSize="17dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/label_socket"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_socket" />
+            <TextView
+                android:id="@+id/label_memory_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="메모리 클럭"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_memory_version" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/value_cores"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="end"
-        android:hint="입력하세요"
-        android:textSize="17dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/label_cores"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_cores" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/value_memory_clock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:gravity="end"
+                android:hint="입력하세요"
+                android:textSize="17dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_memory_clock"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/label_memory_clock" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/value_threads"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="end"
-        android:hint="입력하세요"
-        android:textSize="17dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/label_threads"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_threads" />
+            <TextView
+                android:id="@+id/label_base_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="기본 클럭"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_memory_clock" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/value_memory_version"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="end"
-        android:hint="입력하세요"
-        android:textSize="17dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/label_memory_version"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_memory_version" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/value_base_clock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:gravity="end"
+                android:hint="입력하세요"
+                android:textSize="17dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_base_clock"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/label_base_clock" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/value_memory_clock"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="end"
-        android:hint="입력하세요"
-        android:textSize="17dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/label_memory_clock"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_memory_clock" />
+            <TextView
+                android:id="@+id/label_boost_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="최대 부스트 클럭"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_base_clock" />
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/value_boost_clock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:gravity="end"
+                android:hint="입력하세요"
+                android:textSize="17dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_boost_clock"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/label_boost_clock" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/value_base_clock"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="end"
-        android:hint="입력하세요"
-        android:textSize="17dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/label_base_clock"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_base_clock" />
+            <TextView
+                android:id="@+id/label_L2cache"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="L2 캐시"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_boost_clock" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/value_boost_clock"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="end"
-        android:hint="입력하세요"
-        android:textSize="17dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/label_boost_clock"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_boost_clock" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/value_L2cache"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:gravity="end"
+                android:hint="입력하세요"
+                android:textSize="17dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_L2cache"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/label_L2cache" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/value_L2cache"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="end"
-        android:hint="입력하세요"
-        android:textSize="17dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/label_L2cache"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_L2cache" />
+            <TextView
+                android:id="@+id/label_L3cache"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="L3 캐시"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_L2cache" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/value_L3cache"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="end"
-        android:hint="입력하세요"
-        android:textSize="17dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/label_L3cache"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_L3cache" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/value_L3cache"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:gravity="end"
+                android:hint="입력하세요"
+                android:textSize="17dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_L3cache"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/label_L3cache" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/value_graphics"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="end"
-        android:hint="입력하세요"
-        android:textSize="17dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/label_graphics"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_graphics" />
+            <TextView
+                android:id="@+id/label_graphics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="내장 그래픽"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_L3cache" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/value_tdp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="end"
-        android:hint="입력하세요"
-        android:textSize="17dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/label_tdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/label_tdp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/value_graphics"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:gravity="end"
+                android:hint="입력하세요"
+                android:textSize="17dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_graphics"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/label_graphics" />
+
+            <TextView
+                android:id="@+id/label_tdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="TDP"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_graphics" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/value_tdp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
+                android:gravity="end"
+                android:hint="입력하세요"
+                android:textSize="17dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_tdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/label_tdp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
     <Button
         android:id="@+id/addPartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="부품 추가 완료"
         android:layout_margin="16dp"
+        android:text="부품 추가 완료"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
