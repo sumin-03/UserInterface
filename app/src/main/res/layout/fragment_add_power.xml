@@ -5,17 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="?android:attr/colorBackground"
+    android:layout_marginBottom="100dp"
     android:clickable="true" >
-
-    <ImageView
-        android:id="@+id/iv_power_image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:contentDescription="power 이미지"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@android:drawable/ic_menu_camera" />
 
     <TextView
         android:id="@+id/title"
@@ -194,11 +185,13 @@
         android:id="@+id/addPartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="부품 추가 완료"
         android:layout_margin="16dp"
+        android:layout_marginBottom="100dp"
+        android:text="부품 추가 완료"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

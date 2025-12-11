@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="#FFF"
+    tools:context=".GuideMenu5BootFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="뒤로가기"
+            android:padding="8dp"
+            android:layout_marginStart="-8dp"
+            app:tint="#000000" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="부팅 에러 / 윈도우 진입 불가"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="화면은 나오지만 영어로 된 에러 메시지가 뜨거나 윈도우 설치 화면으로 넘어가지 않나요?"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="24dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:background="@drawable/bg_item_rounded_gray"
+                    android:layout_marginBottom="16dp">
+                    <TextView
+                        android:id="@+id/check_cpu_fan_error"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="'CPU Fan Error' 메시지"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="부팅 시 이 메시지가 뜬다면, CPU 쿨러의 선이 메인보드의 'CPU_FAN' 단자가 아닌 다른 곳(PUMP_FAN 등)에 꽂혀 있을 확률이 높습니다."
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="4dp"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="fitCenter"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_item_rounded_gray"
+                        android:src="@drawable/cpu_fan_error"
+                        android:contentDescription="CPU FAN 단자 위치 예시"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:background="@drawable/bg_item_rounded_gray"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/check_boot_priority"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="부팅 순서 (Boot Priority)"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="윈도우 설치 USB를 꽂으셨나요?\n바이오스(BIOS) 설정에서 'Boot Option #1'을 USB 장치로 설정하거나, 부팅 시 F11/F12 등을 연타해 부팅 메뉴를 띄우세요."
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="4dp"
+                        android:lineSpacingExtra="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:background="@drawable/bg_item_rounded_gray"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/check_storage_detect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="저장장치(SSD) 인식 확인"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="바이오스 화면에 SSD/HDD 이름이 뜨나요?\n안 뜬다면 M.2 나사가 헐겁거나, SATA 데이터/전원 케이블이 빠져 있을 수 있습니다."
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="4dp"
+                        android:lineSpacingExtra="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_item_rounded_gray"
+                    android:padding="16dp"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="❓ 잠깐! 윈도우는 설치하셨나요?"
+                        android:textStyle="bold"
+                        android:textColor="#1976D2"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="새로 산 부품에는 윈도우가 깔려있지 않습니다.\n'Reboot and Select proper Boot device' 메시지가 뜬다면 고장이 아니라 윈도우 설치가 필요한 상태입니다."
+                        android:layout_marginTop="8dp"
+                        android:textColor="#555555"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>

@@ -4,18 +4,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="100dp"
     android:background="?android:attr/colorBackground"
     android:clickable="true" >
-
-    <ImageView
-        android:id="@+id/iv_case_image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:contentDescription="case 이미지"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@android:drawable/ic_menu_camera" />
 
     <TextView
         android:id="@+id/title"
