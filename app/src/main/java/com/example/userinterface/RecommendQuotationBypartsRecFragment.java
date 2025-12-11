@@ -74,8 +74,6 @@ public class RecommendQuotationBypartsRecFragment extends Fragment {
 
         // [디버깅 1] 프래그먼트가 생성되었는지 확인
         Log.e("DEBUG_ENTRY", ">>> RecommendQuotationBypartsRecFragment: onViewCreated 진입 성공! <<<");
-        Toast.makeText(getContext(), "Rec 프래그먼트 진입", Toast.LENGTH_SHORT).show();
-
         db = FirebaseFirestore.getInstance();
 
         if (binding != null) {
@@ -87,12 +85,8 @@ public class RecommendQuotationBypartsRecFragment extends Fragment {
             String gpuName = getArguments().getString(ARG_GPU);
             String ramString = getArguments().getString(ARG_RAM);
 
-            // [디버깅 2] 데이터가 잘 넘어왔는지 확인
-            Log.e("DEBUG_ENTRY", "데이터 수신 확인 -> CPU: " + cpuName + ", GPU: " + gpuName + ", RAM: " + ramString);
-
             if (cpuName == null || gpuName == null) {
                 Log.e("DEBUG_ENTRY", "⚠️ 경고: CPU 또는 GPU 이름이 NULL입니다! 로직을 실행하지 않습니다.");
-                Toast.makeText(getContext(), "부품 정보가 전달되지 않았습니다.", Toast.LENGTH_SHORT).show();
             } else {
                 // 정상적으로 데이터가 있을 때만 실행
                 calculateUserSpecs(cpuName, gpuName, ramString);
@@ -100,7 +94,6 @@ public class RecommendQuotationBypartsRecFragment extends Fragment {
         } else {
             // [디버깅 3] arguments가 아예 없는 경우
             Log.e("DEBUG_ENTRY", "❌ 에러: getArguments()가 NULL입니다. Activity에서 데이터를 보내지 않았습니다.");
-            Toast.makeText(getContext(), "데이터 전달 오류 (Arguments Null)", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -125,7 +118,6 @@ public class RecommendQuotationBypartsRecFragment extends Fragment {
                 findPlayableGames();
             } else {
                 Log.e("DEBUG_REC", "사용자 부품 정보를 DB에서 찾을 수 없음");
-                Toast.makeText(getContext(), "사용자 부품 정보를 찾을 수 없습니다.", Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(e -> {
             Log.e("DEBUG_REC", "사용자 스펙 조회 중 에러 발생", e);
@@ -141,7 +133,6 @@ public class RecommendQuotationBypartsRecFragment extends Fragment {
                     // [수정] 데이터가 비어있으면 Toast 띄우고 종료
                     if (queryDocumentSnapshots.isEmpty()) {
                         Log.e("DEBUG_REC", "데이터 없음: requirements_rec 컬렉션이 비어있거나 존재하지 않음.");
-                        Toast.makeText(getContext(), "DB에 권장 사양 데이터가 없습니다.", Toast.LENGTH_SHORT).show();
                         return;
                     }
 
@@ -167,7 +158,6 @@ public class RecommendQuotationBypartsRecFragment extends Fragment {
                 .addOnFailureListener(e -> {
                     // [수정] DB 연결 실패 시 에러 로그 및 Toast
                     Log.e("DEBUG_REC", "Firestore 조회 실패: requirements_rec", e);
-                    Toast.makeText(getContext(), "DB 연결 실패: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -198,22 +188,45 @@ public class RecommendQuotationBypartsRecFragment extends Fragment {
     }
 
     private Task<Integer> getHardwareGrade(String collectionName, String rawName) {
-        if (rawName == null || rawName.equalsIgnoreCase("None")) return Tasks.forResult(999);
-
-        String cleanName = rawName;
-        String upperName = cleanName.toUpperCase();
-        if (upperName.startsWith("NVIDIA ")) cleanName = cleanName.substring(7).trim();
-        else if (upperName.startsWith("AMD ")) cleanName = cleanName.substring(4).trim();
-        if (upperName.startsWith("INTEL CORE ")) cleanName = cleanName.substring(11).trim();
-        else if (upperName.startsWith("INTEL ")) cleanName = cleanName.substring(6).trim();
-        else if (upperName.startsWith("AMD RYZEN ")) cleanName = cleanName.substring(10).trim();
+        if (rawName == null || rawName.equalsIgnoreCase("None")) {
+            return Tasks.forResult(999);
+        }
 
         List<String> candidates = new ArrayList<>();
-        candidates.add(cleanName);
+
+        // [핵심 수정 1] 원본 이름(앞뒤 공백 제거)을 1순위 후보로 넣습니다.
+        // DB에 "AMD Ryzen 5 3600"이라고 풀네임으로 저장된 경우 이걸로 잡힙니다.
+        String originalTrimmed = rawName.trim();
+        candidates.add(originalTrimmed);
+
+        // [기존 로직] 제조사 제거 버전 생성
+        String cleanName = originalTrimmed;
+        String upperName = cleanName.toUpperCase();
+
+        if (upperName.startsWith("NVIDIA ")) {
+            cleanName = cleanName.substring(7).trim();
+        } else if (upperName.startsWith("INTEL ")) {
+            cleanName = cleanName.substring(6).trim();
+        } else if (upperName.startsWith("AMD ")) {
+            cleanName = cleanName.substring(4).trim();
+        }
+
+        // 제조사를 뗀 이름이 원본과 다르면 후보에 추가 (예: "Ryzen 5 3600")
+        if (!cleanName.equals(originalTrimmed)) {
+            candidates.add(cleanName);
+        }
+
+        // 브랜드(Ryzen, Core) 제거 버전 생성 (예: "5 3600")
         String noBrandName = cleanName.replaceAll("(?i)^Core\\s+", "").replaceAll("(?i)^Ryzen\\s+", "");
-        if (!cleanName.equals(noBrandName)) candidates.add(noBrandName.trim());
+        if (!cleanName.equals(noBrandName)) {
+            candidates.add(noBrandName.trim());
+        }
+
+        // "GB" 제거 버전 추가
         String noGB = cleanName.replaceAll("(?i)\\s+\\d+GB$", "").trim();
         if(!candidates.contains(noGB)) candidates.add(noGB);
+
+        // Super, Ti 등의 변형 추가
         List<String> tempCandidates = new ArrayList<>(candidates);
         for (String s : tempCandidates) {
             String fixed = s.replaceAll("(?i)Super", "SUPER").replaceAll("(?i)Vega", "VEGA").replaceAll("(?i)Ti", "Ti");
@@ -228,6 +241,7 @@ public class RecommendQuotationBypartsRecFragment extends Fragment {
                     Object gObj = doc.get("grade");
                     if (gObj instanceof Number) g = ((Number) gObj).intValue();
                     else if (gObj instanceof String) { try { g = Integer.parseInt((String) gObj); } catch(Exception e){} }
+
                     if (g < bestGrade) bestGrade = g;
                 }
                 return bestGrade;
