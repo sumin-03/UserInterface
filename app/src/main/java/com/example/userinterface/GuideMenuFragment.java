@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.Objects;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link GuideMenuFragment#newInstance} factory method to
@@ -76,6 +78,10 @@ public class GuideMenuFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         view.findViewById(R.id.btn_back).setOnClickListener(v -> {
+//            getActivity().getSupportFragmentManager()
+//                    .beginTransaction()
+//                    .replace()
+//                    .commit();
         });
         view.findViewById(R.id.menu_item_1).setOnClickListener(v -> {
             getChildFragmentManager()

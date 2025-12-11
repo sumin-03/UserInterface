@@ -12,10 +12,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link GuideMenu5Fragment#newInstance} factory method to
+ * Use the {@link GuideMenu5HotFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GuideMenu5Fragment extends Fragment {
+public class GuideMenu5HotFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class GuideMenu5Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public GuideMenu5Fragment() {
+    public GuideMenu5HotFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class GuideMenu5Fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment GuideMenu5Fragment.
+     * @return A new instance of fragment GuideMenu5HotFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static GuideMenu5Fragment newInstance(String param1, String param2) {
-        GuideMenu5Fragment fragment = new GuideMenu5Fragment();
+    public static GuideMenu5HotFragment newInstance(String param1, String param2) {
+        GuideMenu5HotFragment fragment = new GuideMenu5HotFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,7 +61,7 @@ public class GuideMenu5Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_guide_menu5, container, false);
+        return inflater.inflate(R.layout.fragment_guide_menu5_hot, container, false);
     }
 
     @Override
@@ -70,35 +70,7 @@ public class GuideMenu5Fragment extends Fragment {
         view.findViewById(R.id.btn_back).setOnClickListener(v -> {
             getParentFragmentManager()
                     .beginTransaction()
-                    .remove(GuideMenu5Fragment.this)
-                    .commit();
-        });
-        view.findViewById(R.id.menu_item_1).setOnClickListener(v -> {
-            getParentFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.guide_frame, GuideMenu5PowerFragment.newInstance("param1", "param2"))
-                    .addToBackStack(null)
-                    .commit();
-        });
-        view.findViewById(R.id.menu_item_2).setOnClickListener(v -> {
-            getParentFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.guide_frame, GuideMenu5DisplayFragment.newInstance("param1", "param2"))
-                    .addToBackStack(null)
-                    .commit();
-        });
-        view.findViewById(R.id.menu_item_3).setOnClickListener(v -> {
-            getParentFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.guide_frame, GuideMenu5BootFragment.newInstance("param1", "param2"))
-                    .addToBackStack(null)
-                    .commit();
-        });
-        view.findViewById(R.id.menu_item_4).setOnClickListener(v -> {
-            getParentFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.guide_frame, GuideMenu5HotFragment.newInstance("param1", "param2"))
-                    .addToBackStack(null)
+                    .remove(GuideMenu5HotFragment.this)
                     .commit();
         });
     }
