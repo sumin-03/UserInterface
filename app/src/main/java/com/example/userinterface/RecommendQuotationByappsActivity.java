@@ -91,6 +91,10 @@ public class RecommendQuotationByappsActivity extends AppCompatActivity
                         .commit();
             }
         });
+
+        binding.btnBack.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     // [2] GameFragment에서 데이터를 전달받아 멤버 변수에 저장
