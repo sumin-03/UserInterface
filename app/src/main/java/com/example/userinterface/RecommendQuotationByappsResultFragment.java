@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,10 +24,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecommendQuotationByappsResultFragment extends Fragment {
+    private User currentUser;
 
     private FirebaseFirestore db;
     private TextView tvMinSpecContent;
     private TextView tvRecSpecContent;
+    private FinalSpec minSpec=new FinalSpec();
+    private FinalSpec recmdSpec=new FinalSpec();
 
     // 1. 계산된 최종 사양을 저장할 내부 클래스 (제조사별 분리)
     private static class FinalSpec {
@@ -64,13 +68,15 @@ public class RecommendQuotationByappsResultFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        currentUser=getArguments().getSerializable("USER_PROFILE", User.class);
         db = FirebaseFirestore.getInstance();
 
         tvMinSpecContent = view.findViewById(R.id.tvMinSpecContent);
         tvRecSpecContent = view.findViewById(R.id.tvRecSpecContent);
         ImageView ivBack = view.findViewById(R.id.ivBack);
         AppCompatButton btnReselect = view.findViewById(R.id.btnReselect);
+        AppCompatButton btnSaveMin=view.findViewById(R.id.btnSaveMin);
+        AppCompatButton btnSaveRec=view.findViewById(R.id.btnSaveRec);
 
         if (ivBack != null) {
             ivBack.setOnClickListener(v -> {
@@ -87,6 +93,24 @@ public class RecommendQuotationByappsResultFragment extends Fragment {
                     .commit();
         });
 
+        btnSaveMin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyPc.updateCpu(currentUser.getUid(), minSpec.bestCpuIntelName);
+                MyPc.updateGpu(currentUser.getUid(), minSpec.bestGpuNvidiaName);
+                Toast.makeText(getContext(), "저장되었습니다", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnSaveRec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyPc.updateCpu(currentUser.getUid(), recmdSpec.bestCpuIntelName);
+                MyPc.updateGpu(currentUser.getUid(), recmdSpec.bestGpuNvidiaName);
+                Toast.makeText(getContext(), "저장되었습니다", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         if (getArguments() != null) {
             ArrayList<String> games = getArguments().getStringArrayList("gameList");
             ArrayList<String> apps = getArguments().getStringArrayList("appList");
@@ -97,11 +121,11 @@ public class RecommendQuotationByappsResultFragment extends Fragment {
 
             if (!allPrograms.isEmpty()) {
                 // 최소 사양 계산
-                calculateSpecs(allPrograms, "requirements_min", tvMinSpecContent);
+                minSpec=calculateSpecs(allPrograms, "requirements_min", tvMinSpecContent);
 
                 // 권장 사양 계산
                 if (tvRecSpecContent != null) {
-                    calculateSpecs(allPrograms, "requirements_rec", tvRecSpecContent);
+                    recmdSpec=calculateSpecs(allPrograms, "requirements_rec", tvRecSpecContent);
                 }
             }
         }
@@ -110,7 +134,7 @@ public class RecommendQuotationByappsResultFragment extends Fragment {
     // =========================================================================================
     //  메인 로직: 요구사항 수집
     // =========================================================================================
-    private void calculateSpecs(ArrayList<String> programNames, String collectionName, TextView targetView) {
+    private FinalSpec calculateSpecs(ArrayList<String> programNames, String collectionName, TextView targetView) {
         FinalSpec finalSpec = new FinalSpec();
         List<Task<QuerySnapshot>> tasks = new ArrayList<>();
 
@@ -154,6 +178,7 @@ public class RecommendQuotationByappsResultFragment extends Fragment {
             Log.e("SpecCalc", "요구사항 조회 실패", e);
             targetView.setText("요구사항 정보를 불러오지 못했습니다.");
         });
+        return finalSpec;
     }
 
     // =========================================================================================

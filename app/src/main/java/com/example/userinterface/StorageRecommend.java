@@ -72,5 +72,17 @@ public class StorageRecommend extends AppCompatActivity {
                     Toast.makeText(StorageRecommend.this, "저장되었습니다", Toast.LENGTH_SHORT).show();}
             }
         });
+        binding.btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        binding.btnGotoFirst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

@@ -115,19 +115,24 @@ public class MyPcActivity extends AppCompatActivity {
                         .findFirst()
                         .orElse(null);
 
-                IntStream find=myPc.getRam().chars();
-                String ramSize=find.filter((ch)-> (48 <= ch && ch <= 57))
-                        .mapToObj(ch -> (char)ch)
-                        .map(Object::toString)
-                        .collect(Collectors.joining());
-                ramSize=ramSize.substring(1);
-                if(myPc.getRam().contains("DDR3"))
-                    myRam=new RamListActivity.Ram("DDR3", ramSize);
-                else if(myPc.getRam().contains("DDR4"))
-                    myRam=new RamListActivity.Ram("DDR4", ramSize);
-                else if(myPc.getRam().contains("DDR5"))
-                    myRam=new RamListActivity.Ram("DDR5", ramSize);
-                else myRam=null;
+                if(myPc.getRam().contains("나만의")){
+                    myRam=new RamListActivity.Ram("나만의 RAM", "");
+                }
+                else{
+                    IntStream find=myPc.getRam().chars();
+                    String ramSize=find.filter((ch)-> (48 <= ch && ch <= 57))
+                            .mapToObj(ch -> (char)ch)
+                            .map(Object::toString)
+                            .collect(Collectors.joining());
+                    ramSize=ramSize.substring(1);
+                    if(myPc.getRam().contains("DDR3"))
+                        myRam=new RamListActivity.Ram("DDR3", ramSize);
+                    else if(myPc.getRam().contains("DDR4"))
+                        myRam=new RamListActivity.Ram("DDR4", ramSize);
+                    else if(myPc.getRam().contains("DDR5"))
+                        myRam=new RamListActivity.Ram("DDR5", ramSize);
+                    else myRam=null;
+                }
 
                 myPower=powerList.stream()
                         .filter(p -> p.getName().equals(myPc.getPower()))

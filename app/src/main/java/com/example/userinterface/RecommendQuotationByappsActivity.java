@@ -19,6 +19,7 @@ public class RecommendQuotationByappsActivity extends AppCompatActivity
 
     // 1. 데이터를 저장할 멤버 변수 선언 (리스트 초기화)
     private boolean isBasicWorkSelected = false;
+    private User currentUser;
     private ArrayList<String> finalGameList = new ArrayList<>();
     private ArrayList<String> finalAppList = new ArrayList<>();
 
@@ -59,6 +60,7 @@ public class RecommendQuotationByappsActivity extends AppCompatActivity
                     .addToBackStack(null)
                     .commit();
         });
+        currentUser=getIntent().getSerializableExtra("USER_PROFILE", User.class);
 
         // [수정됨] 결과 확인 버튼 로직: 데이터를 모아서 결과 프래그먼트로 이동
         btnResult.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +77,7 @@ public class RecommendQuotationByappsActivity extends AppCompatActivity
                 bundle.putBoolean("isBasicWork", isBasicWorkSelected); // 문서작업 여부
                 bundle.putStringArrayList("gameList", finalGameList);  // 게임 리스트
                 bundle.putStringArrayList("appList", finalAppList);    // 앱 리스트
+                bundle.putSerializable("USER_PROFILE",currentUser);
 
                 // 2. 결과 프래그먼트 생성 및 데이터 전달
                 RecommendQuotationByappsResultFragment resultFragment = new RecommendQuotationByappsResultFragment();
