@@ -101,6 +101,10 @@ public class RecommendQuotationBypartsActivity extends AppCompatActivity {
                     .addToBackStack("rec_spec")
                     .commit();
         });
+
+        binding.btnBack.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     /**
