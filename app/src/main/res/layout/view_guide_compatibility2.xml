@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="집(케이스)보다 가구(메인보드)가 크면 들어갈 수 없습니다. 폼팩터(규격)를 반드시 확인하세요."
+            android:text="케이스보다 메인보드가 크면 들어갈 수 없습니다. 폼팩터를 반드시 확인하세요."
             android:textSize="14sp"
             android:textColor="#757575"
             android:layout_marginBottom="20dp"/>
@@ -80,7 +80,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="큰 케이스는 작은 메인보드를 장착할 수 있지만, 작은 케이스는 큰 메인보드를 장착할 수 없습니다."
+                android:text="큰 케이스는 작은 메인보드를 장착할 수 있지만 작은 케이스는 큰 메인보드를 장착할 수 없습니다."
                 android:textSize="14sp"
                 android:textColor="#616161"/>
         </LinearLayout>
@@ -186,7 +186,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="💡 조립 꿀팁: 스탠드오프(육각 나사)"
+                android:text="💡 조립 꿀팁: 육각 나사"
                 android:textStyle="bold"
                 android:textColor="#EF6C00"
                 android:layout_marginBottom="4dp"/>
@@ -194,7 +194,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="케이스 바닥에는 메인보드를 띄워주는 금색 육각 나사가 있습니다. 메인보드 구멍 위치에 맞게 이 나사 위치를 옮겨주어야 쇼트(고장)가 나지 않습니다."
+                android:text="케이스 바닥에는 메인보드를 띄워주는 금색 육각 나사가 있습니다. 메인보드 구멍 위치에 맞게 이 나사 위치를 옮겨주어야 쇼트가 나지 않습니다."
                 android:textSize="13sp"
                 android:textColor="#5D4037"/>
         </LinearLayout>

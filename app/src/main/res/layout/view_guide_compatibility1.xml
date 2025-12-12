@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="램은 세대(DDR)가 다르면 물리적으로 장착할 수 없습니다. 구매 전 반드시 확인하세요."
+            android:text="램은 DDR 버전이 다르면 물리적으로 장착할 수 없습니다. 구매 전 반드시 확인하세요."
             android:textSize="14sp"
             android:textColor="#757575"
             android:layout_marginBottom="20dp"/>
@@ -181,7 +181,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="• 데스크탑용: DIMM (길쭉함)\n• 노트북용: SO-DIMM (짧고 뭉툭함)"
+                android:text="• 데스크탑용: DIMM (길쭉함)\n• 노트북용: SO-DIMM (짧음)"
                 android:textSize="15sp"
                 android:textColor="#424242"
                 android:lineSpacingExtra="6dp"
@@ -190,7 +190,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="일반적인 조립 PC에는 반드시 '데스크탑용(DIMM)'을 구매해야 합니다."
+                android:text="일반적인 조립 PC에는 반드시 데스크탑용(DIMM)을 구매해야 합니다."
                 android:textSize="13sp"
                 android:textColor="#555555"
                 android:background="#F1F8E9"
