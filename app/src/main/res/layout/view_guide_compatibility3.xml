@@ -159,49 +159,5 @@
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#FFEBEE"
-            android:padding="16dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="6dp">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@android:drawable/stat_sys_warning"
-                    app:tint="#D32F2F"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" 수랭 쿨러 전면 장착 시 주의!"
-                    android:textStyle="bold"
-                    android:textColor="#D32F2F"
-                    android:textSize="16sp"/>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="케이스 전면에 수랭 쿨러 라디에이터를 장착하면, 라디에이터 두께만큼 그래픽카드 장착 공간이 줄어듭니다."
-                android:textSize="13sp"
-                android:textColor="#424242"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="계산법: (케이스 지원 길이) - (라디에이터 두께 30~55mm) > (그래픽카드 길이)"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="#B71C1C"/>
-        </LinearLayout>
-
     </LinearLayout>
 </ScrollView>

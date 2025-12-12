@@ -41,7 +41,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="잠깐! 쿨러 바닥의 비닐을 떼셨나요?"
+                android:text="쿨러 바닥의 비닐을 떼셨나요?"
                 android:textColor="#D32F2F"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -91,7 +91,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. 새 쿨러 바닥에 회색 구리스가 발려있다면 바로 장착하세요.\n2. 없다면 CPU 중앙에 '콩알(●)'만큼 짜주세요.\n\n*너무 많이 바르면 흘러넘칠 수 있습니다."
+                android:text="1. 새 쿨러 바닥에 회색 구리스가 발려있다면 바로 장착하세요.\n2. 없다면 CPU 중앙에 콩알만큼 짜주세요.\n\n너무 많이 바르면 흘러넘칠 수 있습니다."
                 android:textSize="15sp"
                 android:lineSpacingExtra="4dp"
                 android:textColor="#555555"/>
@@ -132,7 +132,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="쿨러를 CPU 위에 올리고 나사를 조입니다.\n\n중요: 한 번에 꽉 조이지 말고, 'X자 모양(대각선)' 순서로 조금씩 번갈아가며 조여야 평평하게 장착됩니다."
+                android:text="쿨러를 CPU 위에 올리고 나사를 조입니다.\n\n중요: 한 번에 꽉 조이지 말고, X자 모양으로 조금씩 번갈아가며 조여야 평평하게 장착됩니다."
                 android:textSize="15sp"
                 android:lineSpacingExtra="4dp"
                 android:textColor="#555555"/>
