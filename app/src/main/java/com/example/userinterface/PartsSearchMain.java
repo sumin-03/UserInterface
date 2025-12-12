@@ -72,6 +72,13 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
             return insets;
         });
 
+        binding.toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -93,6 +100,7 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
                 }
                 return true;
             }
+
         });
         Log.d("KSM", "onQueryTextChange() complete");
 
@@ -108,59 +116,6 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
             loadCpuData();
             Log.d("KSM", "loadCpuData()");
         }
-
-        binding.toolbar.setOnClickListener(v -> { // 위에 toolbar 클릭시 홈으로
-            binding.bottomNavigation.setSelectedItemId(R.id.navigation_home);
-        });
-
-        binding.bottomNavigation.setSelectedItemId(R.id.navigation_search); //내비게이션 부품 검색으로 설정
-        setupNavigationListeners(); //내비게이션 바
-    }
-
-    private void setupNavigationListeners() { //밑에 내비게이션 바 리스너
-        binding.bottomNavigation.setOnItemSelectedListener(Item -> {
-            int itemId = Item.getItemId();
-            Fragment selectedFragment = null;
-            User user = getIntent().getSerializableExtra("USER_PROFILE", User.class);
-
-            if(itemId == R.id.navigation_home){
-                Log.d("KSM", "MoveHome");
-                Intent intent = new Intent(PartsSearchMain.this, HomeActivity.class);
-                intent.putExtra("USER_PROFILE", user);
-                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                ActivityOptions options = ActivityOptions.makeCustomAnimation(this, 0, 0);
-                startActivity(intent, options.toBundle());
-                return true;
-            }
-            else if (itemId == R.id.navigation_search) {
-                Log.d("KSM", "STAY");
-                return true;
-            }
-            else if (itemId == R.id.navigation_guide) {
-                Log.d("MOVE", "MoveGuide");
-                selectedFragment = GuideMenuFragment.newInstance(currentUser);
-            }
-            else if (itemId == R.id.navigation_recommended_builds) {
-                Log.d("MOVE", "goRecommendBuild");
-                Intent intent = new Intent(PartsSearchMain.this, RecommendQuotationHomeActivity.class);
-                intent.putExtra("USER_PROFILE", currentUser); // 유저 정보 넘겨주기
-                startActivity(intent);
-                return true;
-            }
-            else if (itemId == R.id.navigation_community) {
-                Log.d("MOVE", "CommunityMainFragment");
-                selectedFragment = CommunityMainFragment.newInstance(currentUser);
-            }
-            else if (itemId == R.id.navigation_profile) {
-                Log.d("MOVE", "MoveProfile");
-                selectedFragment = MyPageFragment.newInstance(currentUser);
-            }
-            if (selectedFragment != null) { // null 이 아니면 탭 선택 변경
-                loadFragment(selectedFragment);
-                return true;
-            }
-            return false;
-        });
     }
     private void setupAddButtonListener() {
         binding.addPartButton.setOnClickListener(v -> {
@@ -584,7 +539,7 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
     public void onItemClick(int position) {
         ItemModel clickedItem;
         Intent intent;
-        switch(currentTabPosition) {
+        switch (currentTabPosition) {
             case 0:
                 clickedItem = cpuAdapter.getItem(position);
                 if (clickedItem == null) return;
@@ -678,18 +633,5 @@ public class PartsSearchMain extends AppCompatActivity implements PartsSearchAda
                 startActivity(intent);
                 break;
         }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        binding.bottomNavigation.setSelectedItemId(R.id.navigation_search);
-    }
-
-    private void loadFragment(Fragment fragment) {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_container, fragment)
-                .commit();
     }
 }
