@@ -319,6 +319,12 @@
                         android:layout_width="wrap_content"
                         android:text="유저 아이콘 :🐥"
                         android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="부품 추가 기능 사용 가능"
+                        android:textSize="12sp"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -395,11 +401,7 @@
                         android:layout_width="wrap_content"
                         android:text="유저 아이콘: 🍗"
                         android:textSize="12sp"/>
-                    <TextView
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="부품 추가 기능 사용 가능"
-                        android:textSize="12sp"/>
+
                 </LinearLayout>
             </LinearLayout>
 

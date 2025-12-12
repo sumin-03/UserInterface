@@ -107,7 +107,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="• 인텔 12/13/14세대 (LGA1700) <> LGA1700 보드\n• AMD 라이젠 7000번대 (AM5) <> AM5 보드"
+                    android:text="• 인텔 12/13/14세대 (LGA1700) / LGA1700 보드\n• AMD 라이젠 7000번대 (AM5) / AM5 보드"
                     android:textSize="13sp"
                     android:textColor="#555555"/>
             </LinearLayout>
